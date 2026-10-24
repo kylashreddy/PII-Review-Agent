@@ -1,0 +1,7 @@
+record_id,department,status,us_bank_number
+R000001,Support,open,9475937994
+R000002,Logistics,closed,8812345670
+R000003,Procurement,pending,33445566771
+R000004,Finance,open,527381946
+R000005,People Ops,closed,11223344556
+R000006,Support,open,830174625

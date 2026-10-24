@@ -1,0 +1,59 @@
+/* Overlay colours for detections on the LEFT document (CSS Custom Highlight API).
+   These only paint a background behind existing text; they never change the
+   page's layout or text. Generated from the colours in core/labels.js. */
+::highlight(piira-person-name) { background-color: rgba(67, 160, 71, 0.28); }
+::highlight(piira-person-username) { background-color: rgba(251, 140, 0, 0.28); }
+::highlight(piira-email-address) { background-color: rgba(30, 136, 229, 0.28); }
+::highlight(piira-contact-number) { background-color: rgba(0, 137, 123, 0.28); }
+::highlight(piira-address) { background-color: rgba(142, 36, 170, 0.28); }
+::highlight(piira-date) { background-color: rgba(249, 168, 37, 0.35); }
+::highlight(piira-url-link) { background-color: rgba(0, 151, 167, 0.28); }
+::highlight(piira-vehicle-number-plate) { background-color: rgba(124, 179, 66, 0.28); }
+::highlight(piira-business-name) { background-color: rgba(57, 73, 171, 0.28); }
+::highlight(piira-account-number) { background-color: rgba(229, 57, 53, 0.28); }
+::highlight(piira-credentials) { background-color: rgba(173, 20, 87, 0.28); }
+::highlight(piira-ip-address) { background-color: rgba(109, 76, 65, 0.28); }
+::highlight(piira-overscrubbed) { background-color: rgba(117, 117, 117, 0.28); }
+/* RIGHT document: text labeled as PII where no PII was detected (possible overscrub). */
+::highlight(piira-right-overscrub)      {
+  background-color: rgba(123, 31, 162, 0.22);
+  text-decoration: underline wavy #7b1fa2 2px;
+  text-underline-offset: 3px;
+}
+/* RIGHT document, L2 redaction check: leakage, incoherent, wrong data type, not sensible, unknown text. */
+::highlight(piira-right-issue)          {
+  background-color: rgba(211, 47, 47, 0.18);
+  text-decoration: underline wavy #d32f2f 2px;
+  text-underline-offset: 3px;
+}
+/* LEFT document: names from the business names list — public names, not PII; keep them unredacted. */
+::highlight(piira-known-name)           { text-decoration: underline dotted #2e7d32 2px; text-underline-offset: 3px; }
+::highlight(piira-flash)               { background-color: #ffeb3b; color: #000; }
+
+/* Agent mode (preview), RIGHT document. Pending = the agent proposes this label (dashed, not applied to the site);
+   approved = the reviewer said Yes (solid; S2 applies it on the site). */
+::highlight(piira-pend-person-name) { background-color: rgba(67, 160, 71, 0.12); text-decoration: underline dashed #43a047 2px; text-underline-offset: 4px; }
+::highlight(piira-ok-person-name) { background-color: rgba(67, 160, 71, 0.26); text-decoration: underline solid #43a047 2px; text-underline-offset: 4px; }
+::highlight(piira-pend-person-username) { background-color: rgba(251, 140, 0, 0.12); text-decoration: underline dashed #fb8c00 2px; text-underline-offset: 4px; }
+::highlight(piira-ok-person-username) { background-color: rgba(251, 140, 0, 0.26); text-decoration: underline solid #fb8c00 2px; text-underline-offset: 4px; }
+::highlight(piira-pend-email-address) { background-color: rgba(30, 136, 229, 0.12); text-decoration: underline dashed #1e88e5 2px; text-underline-offset: 4px; }
+::highlight(piira-ok-email-address) { background-color: rgba(30, 136, 229, 0.26); text-decoration: underline solid #1e88e5 2px; text-underline-offset: 4px; }
+::highlight(piira-pend-contact-number) { background-color: rgba(0, 137, 123, 0.12); text-decoration: underline dashed #00897b 2px; text-underline-offset: 4px; }
+::highlight(piira-ok-contact-number) { background-color: rgba(0, 137, 123, 0.26); text-decoration: underline solid #00897b 2px; text-underline-offset: 4px; }
+::highlight(piira-pend-address) { background-color: rgba(142, 36, 170, 0.12); text-decoration: underline dashed #8e24aa 2px; text-underline-offset: 4px; }
+::highlight(piira-ok-address) { background-color: rgba(142, 36, 170, 0.26); text-decoration: underline solid #8e24aa 2px; text-underline-offset: 4px; }
+::highlight(piira-pend-url-link) { background-color: rgba(0, 151, 167, 0.12); text-decoration: underline dashed #0097a7 2px; text-underline-offset: 4px; }
+::highlight(piira-ok-url-link) { background-color: rgba(0, 151, 167, 0.26); text-decoration: underline solid #0097a7 2px; text-underline-offset: 4px; }
+::highlight(piira-pend-vehicle-number-plate) { background-color: rgba(124, 179, 66, 0.12); text-decoration: underline dashed #7cb342 2px; text-underline-offset: 4px; }
+::highlight(piira-ok-vehicle-number-plate) { background-color: rgba(124, 179, 66, 0.26); text-decoration: underline solid #7cb342 2px; text-underline-offset: 4px; }
+::highlight(piira-pend-business-name) { background-color: rgba(57, 73, 171, 0.12); text-decoration: underline dashed #3949ab 2px; text-underline-offset: 4px; }
+::highlight(piira-ok-business-name) { background-color: rgba(57, 73, 171, 0.26); text-decoration: underline solid #3949ab 2px; text-underline-offset: 4px; }
+::highlight(piira-pend-account-number) { background-color: rgba(229, 57, 53, 0.12); text-decoration: underline dashed #e53935 2px; text-underline-offset: 4px; }
+::highlight(piira-ok-account-number) { background-color: rgba(229, 57, 53, 0.26); text-decoration: underline solid #e53935 2px; text-underline-offset: 4px; }
+::highlight(piira-pend-credentials) { background-color: rgba(173, 20, 87, 0.12); text-decoration: underline dashed #ad1457 2px; text-underline-offset: 4px; }
+::highlight(piira-ok-credentials) { background-color: rgba(173, 20, 87, 0.26); text-decoration: underline solid #ad1457 2px; text-underline-offset: 4px; }
+::highlight(piira-pend-ip-address) { background-color: rgba(109, 76, 65, 0.12); text-decoration: underline dashed #6d4c41 2px; text-underline-offset: 4px; }
+::highlight(piira-ok-ip-address) { background-color: rgba(109, 76, 65, 0.26); text-decoration: underline solid #6d4c41 2px; text-underline-offset: 4px; }
+::highlight(piira-agent-remove)       { text-decoration: line-through #d32f2f 2px; background-color: rgba(211, 47, 47, 0.10); }
+::highlight(piira-agent-ask)          { background-color: rgba(255, 152, 0, 0.18); text-decoration: underline dotted #ef6c00 2px; text-underline-offset: 4px; }
+::highlight(piira-agent-current)      { background-color: rgba(255, 235, 59, 0.55); }

@@ -1,0 +1,610 @@
+{
+ "model/bench-docs": {
+  "Account Number": {
+   "exact": 6,
+   "fn": 0,
+   "fp": 0,
+   "gold": 6,
+   "surfaced": 6,
+   "tp": 6
+  },
+  "Address": {
+   "exact": 3,
+   "fn": 0,
+   "fp": 0,
+   "gold": 3,
+   "surfaced": 3,
+   "tp": 3
+  },
+  "Business Name": {
+   "exact": 7,
+   "fn": 0,
+   "fp": 0,
+   "gold": 7,
+   "surfaced": 7,
+   "tp": 7
+  },
+  "Contact Number": {
+   "exact": 7,
+   "fn": 0,
+   "fp": 0,
+   "gold": 7,
+   "surfaced": 7,
+   "tp": 7
+  },
+  "Credentials": {
+   "exact": 8,
+   "fn": 0,
+   "fp": 0,
+   "gold": 8,
+   "surfaced": 8,
+   "tp": 8
+  },
+  "Email Address": {
+   "exact": 7,
+   "fn": 0,
+   "fp": 0,
+   "gold": 7,
+   "surfaced": 7,
+   "tp": 7
+  },
+  "IP Address": {
+   "exact": 6,
+   "fn": 0,
+   "fp": 0,
+   "gold": 6,
+   "surfaced": 6,
+   "tp": 6
+  },
+  "Person Name": {
+   "exact": 16,
+   "fn": 0,
+   "fp": 0,
+   "gold": 16,
+   "surfaced": 16,
+   "tp": 16
+  },
+  "Person Username": {
+   "exact": 5,
+   "fn": 0,
+   "fp": 0,
+   "gold": 5,
+   "surfaced": 5,
+   "tp": 5
+  },
+  "URL/Link": {
+   "exact": 6,
+   "fn": 0,
+   "fp": 0,
+   "gold": 6,
+   "surfaced": 6,
+   "tp": 6
+  },
+  "Vehicle Number Plate": {
+   "exact": 4,
+   "fn": 0,
+   "fp": 0,
+   "gold": 4,
+   "surfaced": 4,
+   "tp": 4
+  }
+ },
+ "model/bench-holdout": {
+  "Account Number": {
+   "exact": 5,
+   "fn": 0,
+   "fp": 0,
+   "gold": 5,
+   "surfaced": 5,
+   "tp": 5
+  },
+  "Address": {
+   "exact": 3,
+   "fn": 0,
+   "fp": 0,
+   "gold": 3,
+   "surfaced": 3,
+   "tp": 3
+  },
+  "Business Name": {
+   "exact": 2,
+   "fn": 0,
+   "fp": 0,
+   "gold": 2,
+   "surfaced": 2,
+   "tp": 2
+  },
+  "Contact Number": {
+   "exact": 3,
+   "fn": 0,
+   "fp": 0,
+   "gold": 3,
+   "surfaced": 3,
+   "tp": 3
+  },
+  "Credentials": {
+   "exact": 2,
+   "fn": 0,
+   "fp": 0,
+   "gold": 2,
+   "surfaced": 2,
+   "tp": 2
+  },
+  "Email Address": {
+   "exact": 3,
+   "fn": 0,
+   "fp": 0,
+   "gold": 3,
+   "surfaced": 3,
+   "tp": 3
+  },
+  "IP Address": {
+   "exact": 3,
+   "fn": 0,
+   "fp": 0,
+   "gold": 3,
+   "surfaced": 3,
+   "tp": 3
+  },
+  "Person Name": {
+   "exact": 17,
+   "fn": 0,
+   "fp": 0,
+   "gold": 17,
+   "surfaced": 17,
+   "tp": 17
+  },
+  "Person Username": {
+   "exact": 2,
+   "fn": 0,
+   "fp": 0,
+   "gold": 2,
+   "surfaced": 2,
+   "tp": 2
+  },
+  "URL/Link": {
+   "exact": 5,
+   "fn": 0,
+   "fp": 0,
+   "gold": 5,
+   "surfaced": 5,
+   "tp": 5
+  },
+  "Vehicle Number Plate": {
+   "exact": 2,
+   "fn": 0,
+   "fp": 0,
+   "gold": 2,
+   "surfaced": 2,
+   "tp": 2
+  }
+ },
+ "model/blind": {
+  "Account Number": {
+   "exact": 378,
+   "fn": 0,
+   "fp": 0,
+   "gold": 378,
+   "surfaced": 378,
+   "tp": 378
+  },
+  "Address": {
+   "exact": 16,
+   "fn": 4,
+   "fp": 6,
+   "gold": 20,
+   "surfaced": 20,
+   "tp": 16
+  },
+  "Business Name": {
+   "exact": 17,
+   "fn": 6,
+   "fp": 4,
+   "gold": 24,
+   "surfaced": 24,
+   "tp": 18
+  },
+  "Contact Number": {
+   "exact": 76,
+   "fn": 0,
+   "fp": 2,
+   "gold": 76,
+   "surfaced": 76,
+   "tp": 76
+  },
+  "Credentials": {
+   "exact": 392,
+   "fn": 4,
+   "fp": 0,
+   "gold": 396,
+   "surfaced": 392,
+   "tp": 392
+  },
+  "Email Address": {
+   "exact": 88,
+   "fn": 0,
+   "fp": 0,
+   "gold": 88,
+   "surfaced": 88,
+   "tp": 88
+  },
+  "IP Address": {
+   "exact": 20,
+   "fn": 0,
+   "fp": 0,
+   "gold": 20,
+   "surfaced": 20,
+   "tp": 20
+  },
+  "Person Name": {
+   "exact": 255,
+   "fn": 3,
+   "fp": 3,
+   "gold": 262,
+   "surfaced": 260,
+   "tp": 259
+  },
+  "Person Username": {
+   "exact": 18,
+   "fn": 1,
+   "fp": 0,
+   "gold": 24,
+   "surfaced": 23,
+   "tp": 23
+  },
+  "URL/Link": {
+   "exact": 24,
+   "fn": 4,
+   "fp": 0,
+   "gold": 28,
+   "surfaced": 24,
+   "tp": 24
+  },
+  "Vehicle Number Plate": {
+   "exact": 12,
+   "fn": 0,
+   "fp": 0,
+   "gold": 12,
+   "surfaced": 12,
+   "tp": 12
+  }
+ },
+ "model/synthetic": {
+  "Address": {
+   "exact": 58,
+   "fn": 23,
+   "fp": 0,
+   "gold": 139,
+   "surfaced": 121,
+   "tp": 116
+  },
+  "Business Name": {
+   "exact": 176,
+   "fn": 30,
+   "fp": 24,
+   "gold": 206,
+   "surfaced": 203,
+   "tp": 176
+  },
+  "Person Name": {
+   "exact": 455,
+   "fn": 30,
+   "fp": 0,
+   "gold": 486,
+   "surfaced": 476,
+   "tp": 456
+  },
+  "Person Username": {
+   "exact": 20,
+   "fn": 0,
+   "fp": 0,
+   "gold": 20,
+   "surfaced": 20,
+   "tp": 20
+  }
+ },
+ "rules/bench-docs": {
+  "Account Number": {
+   "exact": 6,
+   "fn": 0,
+   "fp": 0,
+   "gold": 6,
+   "surfaced": 6,
+   "tp": 6
+  },
+  "Address": {
+   "exact": 3,
+   "fn": 0,
+   "fp": 0,
+   "gold": 3,
+   "surfaced": 3,
+   "tp": 3
+  },
+  "Business Name": {
+   "exact": 7,
+   "fn": 0,
+   "fp": 0,
+   "gold": 7,
+   "surfaced": 7,
+   "tp": 7
+  },
+  "Contact Number": {
+   "exact": 7,
+   "fn": 0,
+   "fp": 0,
+   "gold": 7,
+   "surfaced": 7,
+   "tp": 7
+  },
+  "Credentials": {
+   "exact": 8,
+   "fn": 0,
+   "fp": 0,
+   "gold": 8,
+   "surfaced": 8,
+   "tp": 8
+  },
+  "Email Address": {
+   "exact": 7,
+   "fn": 0,
+   "fp": 0,
+   "gold": 7,
+   "surfaced": 7,
+   "tp": 7
+  },
+  "IP Address": {
+   "exact": 6,
+   "fn": 0,
+   "fp": 0,
+   "gold": 6,
+   "surfaced": 6,
+   "tp": 6
+  },
+  "Person Name": {
+   "exact": 16,
+   "fn": 0,
+   "fp": 0,
+   "gold": 16,
+   "surfaced": 16,
+   "tp": 16
+  },
+  "Person Username": {
+   "exact": 5,
+   "fn": 0,
+   "fp": 0,
+   "gold": 5,
+   "surfaced": 5,
+   "tp": 5
+  },
+  "URL/Link": {
+   "exact": 6,
+   "fn": 0,
+   "fp": 0,
+   "gold": 6,
+   "surfaced": 6,
+   "tp": 6
+  },
+  "Vehicle Number Plate": {
+   "exact": 4,
+   "fn": 0,
+   "fp": 0,
+   "gold": 4,
+   "surfaced": 4,
+   "tp": 4
+  }
+ },
+ "rules/bench-holdout": {
+  "Account Number": {
+   "exact": 5,
+   "fn": 0,
+   "fp": 0,
+   "gold": 5,
+   "surfaced": 5,
+   "tp": 5
+  },
+  "Address": {
+   "exact": 3,
+   "fn": 0,
+   "fp": 0,
+   "gold": 3,
+   "surfaced": 3,
+   "tp": 3
+  },
+  "Business Name": {
+   "exact": 2,
+   "fn": 0,
+   "fp": 0,
+   "gold": 2,
+   "surfaced": 2,
+   "tp": 2
+  },
+  "Contact Number": {
+   "exact": 3,
+   "fn": 0,
+   "fp": 0,
+   "gold": 3,
+   "surfaced": 3,
+   "tp": 3
+  },
+  "Credentials": {
+   "exact": 2,
+   "fn": 0,
+   "fp": 0,
+   "gold": 2,
+   "surfaced": 2,
+   "tp": 2
+  },
+  "Email Address": {
+   "exact": 3,
+   "fn": 0,
+   "fp": 0,
+   "gold": 3,
+   "surfaced": 3,
+   "tp": 3
+  },
+  "IP Address": {
+   "exact": 3,
+   "fn": 0,
+   "fp": 0,
+   "gold": 3,
+   "surfaced": 3,
+   "tp": 3
+  },
+  "Person Name": {
+   "exact": 17,
+   "fn": 0,
+   "fp": 0,
+   "gold": 17,
+   "surfaced": 17,
+   "tp": 17
+  },
+  "Person Username": {
+   "exact": 2,
+   "fn": 0,
+   "fp": 0,
+   "gold": 2,
+   "surfaced": 2,
+   "tp": 2
+  },
+  "URL/Link": {
+   "exact": 5,
+   "fn": 0,
+   "fp": 0,
+   "gold": 5,
+   "surfaced": 5,
+   "tp": 5
+  },
+  "Vehicle Number Plate": {
+   "exact": 2,
+   "fn": 0,
+   "fp": 0,
+   "gold": 2,
+   "surfaced": 2,
+   "tp": 2
+  }
+ },
+ "rules/blind": {
+  "Account Number": {
+   "exact": 378,
+   "fn": 0,
+   "fp": 0,
+   "gold": 378,
+   "surfaced": 378,
+   "tp": 378
+  },
+  "Address": {
+   "exact": 16,
+   "fn": 4,
+   "fp": 4,
+   "gold": 20,
+   "surfaced": 20,
+   "tp": 16
+  },
+  "Business Name": {
+   "exact": 17,
+   "fn": 6,
+   "fp": 0,
+   "gold": 24,
+   "surfaced": 23,
+   "tp": 18
+  },
+  "Contact Number": {
+   "exact": 76,
+   "fn": 0,
+   "fp": 2,
+   "gold": 76,
+   "surfaced": 76,
+   "tp": 76
+  },
+  "Credentials": {
+   "exact": 392,
+   "fn": 4,
+   "fp": 0,
+   "gold": 396,
+   "surfaced": 392,
+   "tp": 392
+  },
+  "Email Address": {
+   "exact": 88,
+   "fn": 0,
+   "fp": 0,
+   "gold": 88,
+   "surfaced": 88,
+   "tp": 88
+  },
+  "IP Address": {
+   "exact": 20,
+   "fn": 0,
+   "fp": 0,
+   "gold": 20,
+   "surfaced": 20,
+   "tp": 20
+  },
+  "Person Name": {
+   "exact": 255,
+   "fn": 3,
+   "fp": 0,
+   "gold": 262,
+   "surfaced": 259,
+   "tp": 259
+  },
+  "Person Username": {
+   "exact": 15,
+   "fn": 4,
+   "fp": 0,
+   "gold": 24,
+   "surfaced": 20,
+   "tp": 20
+  },
+  "URL/Link": {
+   "exact": 24,
+   "fn": 4,
+   "fp": 0,
+   "gold": 28,
+   "surfaced": 24,
+   "tp": 24
+  },
+  "Vehicle Number Plate": {
+   "exact": 12,
+   "fn": 0,
+   "fp": 0,
+   "gold": 12,
+   "surfaced": 12,
+   "tp": 12
+  }
+ },
+ "rules/synthetic": {
+  "Address": {
+   "exact": 38,
+   "fn": 49,
+   "fp": 0,
+   "gold": 139,
+   "surfaced": 90,
+   "tp": 90
+  },
+  "Business Name": {
+   "exact": 131,
+   "fn": 75,
+   "fp": 23,
+   "gold": 206,
+   "surfaced": 156,
+   "tp": 131
+  },
+  "Person Name": {
+   "exact": 442,
+   "fn": 43,
+   "fp": 0,
+   "gold": 486,
+   "surfaced": 461,
+   "tp": 443
+  },
+  "Person Username": {
+   "exact": 20,
+   "fn": 0,
+   "fp": 0,
+   "gold": 20,
+   "surfaced": 20,
+   "tp": 20
+  }
+ }
+}

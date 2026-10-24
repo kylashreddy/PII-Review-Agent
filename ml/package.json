@@ -1,0 +1,15 @@
+{
+  "name": "pii-review-assistant-ml",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Prototype and evaluation of the GLiNER model next to the rule detectors. Not part of the extension package.",
+  "scripts": {
+    "fetch-model": "node fetch-model.js",
+    "eval": "node eval.js"
+  },
+  "dependencies": {
+    "gliner": "^0.0.19",
+    "onnxruntime-node": "^1.19.2",
+    "onnxruntime-web": "^1.22.0"
+  }
+}

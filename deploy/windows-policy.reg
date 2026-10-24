@@ -1,0 +1,16 @@
+Windows Registry Editor Version 5.00
+
+; PII Review Assistant: force-install and organisation settings for Google Chrome.
+; Replace EXTENSION_ID and UPDATE_URL (see docs/DEPLOYMENT.md). For Microsoft Edge,
+; use SOFTWARE\Policies\Microsoft\Edge instead of SOFTWARE\Policies\Google\Chrome.
+; If "1" is already used in ExtensionInstallForcelist, pick the next free number.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallForcelist]
+"1"="EXTENSION_ID;UPDATE_URL"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\3rdparty\extensions\EXTENSION_ID\policy]
+"enabled"=dword:00000001
+"defaultStage"="L2"
+"supportContact"="#pii-review-help"
+; Lists and objects are written as JSON text.
+"extraKnownNames"="[\"Peak Talent\"]"

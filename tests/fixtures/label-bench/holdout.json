@@ -1,0 +1,37 @@
+{
+ "about": "Held-out set: written without tuning; measures generalisation.",
+ "docs": [
+  {
+   "file": "hr-letter.txt",
+   "marked": "OFFER LETTER\nDate: 05 January 2024\nTo,\nMs. {{Person Name|Aishwarya Natarajan}}\n{{Address|No. 18, 2nd Main Road, Jayanagar 4th Block, Bengaluru}} - 560011\n\nDear {{Person Name|Aishwarya}},\n\nWe are pleased to offer you the position of Senior Analyst at {{Business Name|Quantra Fintech Private Limited}}.\nYour reporting manager will be {{Person Name|Vinod Bhaskaran}}. Please confirm by writing to {{Email Address|careers@quantrafintech.com}}.\nSalary will be credited to your account {{Account Number|918010045671234}} with Axis Bank (IFSC {{Account Number|UTIB0000123}}).\n\nYours sincerely,\n{{Person Name|Neha Saxena}}\nHead - Talent Acquisition\n"
+  },
+  {
+   "file": "support-chat.json",
+   "marked": "{\"ticket\": 88213, \"customer\": \"{{Person Name|Farhan Qureshi}}\", \"phone\": \"{{Contact Number|+91 99001 22334}}\", \"messages\": [\n {\"from\": \"customer\", \"text\": \"My order hasn't arrived. Tracking link: {{URL/Link|https://track.bluedart.com/awb/5522331100}}\"},\n {\"from\": \"agent\", \"name\": \"{{Person Name|Pooja}}\", \"text\": \"Sorry {{Person Name|Farhan}}! Please share the delivery address.\"},\n {\"from\": \"customer\", \"text\": \"{{Address|Flat 7C, Green Meadows, Sector 45, Gurugram, Haryana}} 122003\"},\n {\"from\": \"agent\", \"text\": \"Thanks. Refund of Rs 2,999 will go to UPI {{Account Number|farhanq@okicici}} within 5 days.\"}\n]}\n"
+  },
+  {
+   "file": "nginx-access.log",
+   "marked": "{{IP Address|157.48.12.201}} - - [10/Oct/2023:13:55:36 +0530] \"GET /profile/anita_m HTTP/1.1\" 200 2326 \"https://www.google.com/\" \"Mozilla/5.0\"\n{{IP Address|192.168.1.105}} - - [10/Oct/2023:13:55:40 +0530] \"POST /login HTTP/1.1\" 302 0 \"-\" \"curl/7.68.0\"\n{{IP Address|2405:201:5c0a:9e10:d1c3:7f0e:1b2a:44c1}} - - [10/Oct/2023:13:56:02 +0530] \"GET /static/app.js HTTP/1.1\" 200 51234 \"-\" \"Mozilla/5.0\"\n"
+  },
+  {
+   "file": "deploy.yaml",
+   "marked": "apiVersion: v1\nkind: Secret\nmetadata:\n  name: payments-secrets\n  namespace: prod\nstringData:\n  DATABASE_URL: \"{{Credentials|mysql://payuser:Qw3rty!9@10.20.30.40:3306/payments}}\"\n  RAZORPAY_KEY_SECRET: \"{{Credentials|Xy7KpL2mNq9RtV4sBw6Jd1Fh}}\"\n  SLACK_WEBHOOK: \"{{URL/Link|https://hooks.slack.com/services/T024BE7LD/B01ABCD/xyz123}}\"\n  replicas: 3\n  image: registry.acme-corp.com/payments:1.4.2\n"
+  },
+  {
+   "file": "rto-notice.txt",
+   "marked": "TRAFFIC CHALLAN\nVehicle No: {{Vehicle Number Plate|UP 32 HK 7788}}\nOwner: {{Person Name|Rajendra Prasad Tiwari}}\nOffence: Over speeding on NH-27 near Lucknow\nFine: Rs. 2,000. Pay online at {{URL/Link|https://echallan.parivahan.gov.in/index/accused-challan}} or call {{Contact Number|1800-120-1234}}.\nSecond vehicle: {{Vehicle Number Plate|UP32AB0001}}\n"
+  },
+  {
+   "file": "meeting-notes.md",
+   "marked": "# Weekly sync - Platform team\nAttendees: {{Person Name|Harish}}, {{Person Name|Swathi Reddy}}, {{Person Name|Mohan K}}, {{Person Name|Jessica Thomas}}\n- {{Person Name|Harish}} to follow up with {{Business Name|Cloudnine Hospitals}} on the integration\n- Vendor contact: {{Person Name|Tom Becker}} ({{Email Address|tom.becker@datavault.io}}, {{Contact Number|+49 30 1234 5678}})\n- Staging is at {{URL/Link|https://staging.platform.acme-corp.com}}\n- Action items reviewed; next sync Thursday\n"
+  },
+  {
+   "file": "bank-statement.csv",
+   "marked": "Date,Description,Ref No,Debit,Credit,Balance\n01/09/2023,NEFT-{{Person Name|SURESH BABU}}-SALARY,N123456789,,85000.00,1,25,430.50\n03/09/2023,UPI/{{Account Number|swiggy@icici}}/Food,4512378901,450.00,,1,24,980.50\n05/09/2023,ATM WDL {{Address|MG ROAD BANGALORE}},ATM778812,5000.00,,1,19,980.50\n07/09/2023,IMPS/{{Person Name|ANJALI MEHRA}}/{{Account Number|60123456789}},IMPS44521,2000.00,,1,17,980.50\n"
+  },
+  {
+   "file": "tweet-export.txt",
+   "marked": "{{Person Username|@techie_ravi}} replying to {{Person Username|@nasscom}}: great event! Met {{Person Name|Sanjana Rao}} from Freshworks there.\nFollow me on {{URL/Link|instagram.com/ravi.clicks}} and email {{Email Address|ravi.clicks@protonmail.com}}\n#AI #Startups\n"
+  }
+ ]
+}

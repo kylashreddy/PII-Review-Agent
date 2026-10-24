@@ -1,0 +1,4 @@
+record_id,department,status,us_itin,ssn
+R000001,Field Services,open,912-70-1234,123-45-6789
+R000002,Compliance,closed,900-85-6789,234-56-7890
+R000003,Field Services,open,987-91-4321,345-67-8901

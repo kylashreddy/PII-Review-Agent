@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- PII Review Assistant for Google Chrome on macOS (Jamf, Intune, Kandji...).
+     Replace EXTENSION_ID and UPDATE_URL; give the profile your own UUIDs if your MDM asks. -->
+<plist version="1.0">
+<dict>
+  <key>PayloadDisplayName</key><string>PII Review Assistant</string>
+  <key>PayloadIdentifier</key><string>com.company.pii-review-assistant</string>
+  <key>PayloadType</key><string>Configuration</string>
+  <key>PayloadUUID</key><string>6C1E2B4A-8E57-4C1B-9C38-2D5D0B1E7A01</string>
+  <key>PayloadVersion</key><integer>1</integer>
+  <key>PayloadScope</key><string>System</string>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadType</key><string>com.google.Chrome</string>
+      <key>PayloadIdentifier</key><string>com.company.pii-review-assistant.install</string>
+      <key>PayloadUUID</key><string>6C1E2B4A-8E57-4C1B-9C38-2D5D0B1E7A02</string>
+      <key>PayloadVersion</key><integer>1</integer>
+      <key>ExtensionInstallForcelist</key>
+      <array><string>EXTENSION_ID;UPDATE_URL</string></array>
+    </dict>
+    <dict>
+      <key>PayloadType</key><string>com.google.Chrome.extensions.EXTENSION_ID</string>
+      <key>PayloadIdentifier</key><string>com.company.pii-review-assistant.settings</string>
+      <key>PayloadUUID</key><string>6C1E2B4A-8E57-4C1B-9C38-2D5D0B1E7A03</string>
+      <key>PayloadVersion</key><integer>1</integer>
+      <key>enabled</key><true/>
+      <key>defaultStage</key><string>L2</string>
+      <key>supportContact</key><string>#pii-review-help</string>
+      <key>extraKnownNames</key>
+      <array><string>Peak Talent</string></array>
+    </dict>
+  </array>
+</dict>
+</plist>

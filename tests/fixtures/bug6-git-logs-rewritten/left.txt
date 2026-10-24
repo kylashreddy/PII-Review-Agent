@@ -1,0 +1,60 @@
+0000000000000000000000000000000000000000 0807e5b38fe26bfcd96de1d52ca2400867fd3a06 Hrithvik Basak <hrithvik.basak@gmail.com> 1772450077 +0530	commit (initial): Add billing service skeleton
+0807e5b38fe26bfcd96de1d52ca2400867fd3a06 d57cdc678eae9d63a5ed8ba2ac60b4e1ae56cdcd Sneha Kulkarni <sneha.k@outlook.com> 1772450175 +0530	commit: Fix retry logic for invoice webhook
+d57cdc678eae9d63a5ed8ba2ac60b4e1ae56cdcd 5e2195b1974bd4c9e42c483ce1c37f4da3e4fc11 Arjun Nair <arjun.nair@proton.me> 1772450274 +0530	commit: Update README with deployment steps
+5e2195b1974bd4c9e42c483ce1c37f4da3e4fc11 0716ba3b4998247b69167a4071004d555942fe02 Hrithvik Basak <hrithvik.basak@gmail.com> 1772450374 +0530	merge feature/payments: Fast-forward
+0716ba3b4998247b69167a4071004d555942fe02 f9e9a753ecbedac0a363bbe6e41881e1bfb2fd7e Sneha Kulkarni <sneha.k@outlook.com> 1772450475 +0530	commit (amend): Rename env vars
+f9e9a753ecbedac0a363bbe6e41881e1bfb2fd7e 62c6396344e38ddb87c49cefdefaf2880b1d97b5 Arjun Nair <arjun.nair@proton.me> 1772450577 +0530	checkout: moving from main to release/1.4
+62c6396344e38ddb87c49cefdefaf2880b1d97b5 74c145725b2938009c5b9a35f6ab1d0eead4daa3 Hrithvik Basak <hrithvik.basak@gmail.com> 1772450680 +0530	commit: Bump axios to 1.7.4
+74c145725b2938009c5b9a35f6ab1d0eead4daa3 72c13277085f0f3d9018b9471acf60a50bba00d1 Sneha Kulkarni <sneha.k@outlook.com> 1772450784 +0530	rebase (finish): returning to refs/heads/main
+72c13277085f0f3d9018b9471acf60a50bba00d1 4cf3e19e4edf144599aa0076a9c32566b5fa6a58 Arjun Nair <arjun.nair@proton.me> 1772450889 +0530	commit (initial): Add billing service skeleton
+4cf3e19e4edf144599aa0076a9c32566b5fa6a58 e9c923fffa53dcc3461fd89ec6863c5625c81fe5 Hrithvik Basak <hrithvik.basak@gmail.com> 1772450995 +0530	commit: Fix retry logic for invoice webhook
+e9c923fffa53dcc3461fd89ec6863c5625c81fe5 7075067223334f7e2592274643581ed0992091ea Sneha Kulkarni <sneha.k@outlook.com> 1772451102 +0530	commit: Update README with deployment steps
+7075067223334f7e2592274643581ed0992091ea 36cb143d84f5fa80f3c6c4ef849ca1d7895ddc01 Arjun Nair <arjun.nair@proton.me> 1772451210 +0530	merge feature/payments: Fast-forward
+36cb143d84f5fa80f3c6c4ef849ca1d7895ddc01 705fba730ed5efd7c248f0a7d8658858dd4f1674 Hrithvik Basak <hrithvik.basak@gmail.com> 1772451319 +0530	commit (amend): Rename env vars
+705fba730ed5efd7c248f0a7d8658858dd4f1674 37c38d5f08824b7fbb7ca84172eb82730eedc288 Sneha Kulkarni <sneha.k@outlook.com> 1772451429 +0530	checkout: moving from main to release/1.4
+37c38d5f08824b7fbb7ca84172eb82730eedc288 4494cd9ffd28076c6d2c4ddb2573a19699629263 Arjun Nair <arjun.nair@proton.me> 1772451540 +0530	commit: Bump axios to 1.7.4
+4494cd9ffd28076c6d2c4ddb2573a19699629263 8408e5cee6f1c36a9b08c4e7dec07afd4d355c39 Hrithvik Basak <hrithvik.basak@gmail.com> 1772451652 +0530	rebase (finish): returning to refs/heads/main
+8408e5cee6f1c36a9b08c4e7dec07afd4d355c39 de0824487d10e09991fef6e282e1b6fe14916436 Sneha Kulkarni <sneha.k@outlook.com> 1772451765 +0530	commit (initial): Add billing service skeleton
+de0824487d10e09991fef6e282e1b6fe14916436 e1526804350435c0cc0d8bc2c1a54a6d3358ceea Arjun Nair <arjun.nair@proton.me> 1772451879 +0530	commit: Fix retry logic for invoice webhook
+e1526804350435c0cc0d8bc2c1a54a6d3358ceea 1d5b232b71ba25c596033ab4ebf90fbc89e8c0c8 Hrithvik Basak <hrithvik.basak@gmail.com> 1772451994 +0530	commit: Update README with deployment steps
+1d5b232b71ba25c596033ab4ebf90fbc89e8c0c8 2622fb01c8e21b9ef4b8aff01c31b2b68db8ac59 Sneha Kulkarni <sneha.k@outlook.com> 1772452110 +0530	merge feature/payments: Fast-forward
+2622fb01c8e21b9ef4b8aff01c31b2b68db8ac59 b2c164c1f8214f4d7824f76758cc6dafce42c4af Arjun Nair <arjun.nair@proton.me> 1772452227 +0530	commit (amend): Rename env vars
+b2c164c1f8214f4d7824f76758cc6dafce42c4af 313815a7a393d2fb21c760bf3c379a705346b65f Hrithvik Basak <hrithvik.basak@gmail.com> 1772452345 +0530	checkout: moving from main to release/1.4
+313815a7a393d2fb21c760bf3c379a705346b65f 4c8faf5ce5ab2ba30aa5165dd3bc9df2184c0b08 Sneha Kulkarni <sneha.k@outlook.com> 1772452464 +0530	commit: Bump axios to 1.7.4
+4c8faf5ce5ab2ba30aa5165dd3bc9df2184c0b08 f5ce041b2a48b7e72ca7b5245bd3a740ada6043e Arjun Nair <arjun.nair@proton.me> 1772452584 +0530	rebase (finish): returning to refs/heads/main
+f5ce041b2a48b7e72ca7b5245bd3a740ada6043e a6d40a6db86d41015b39f7f70b1abc1b43df8af9 Hrithvik Basak <hrithvik.basak@gmail.com> 1772452705 +0530	commit (initial): Add billing service skeleton
+a6d40a6db86d41015b39f7f70b1abc1b43df8af9 a9ed65e391610b9dcd419f1f6728095280d6ad68 Sneha Kulkarni <sneha.k@outlook.com> 1772452827 +0530	commit: Fix retry logic for invoice webhook
+a9ed65e391610b9dcd419f1f6728095280d6ad68 74fd6ab3ca49a7a15751b25769aadc18bfb9ca3d Arjun Nair <arjun.nair@proton.me> 1772452950 +0530	commit: Update README with deployment steps
+74fd6ab3ca49a7a15751b25769aadc18bfb9ca3d 79e42b81e37ac42bc94c3df45e92b51b32580067 Hrithvik Basak <hrithvik.basak@gmail.com> 1772453074 +0530	merge feature/payments: Fast-forward
+79e42b81e37ac42bc94c3df45e92b51b32580067 a72f0b0d94bbdc5c37a80f41c0da4559827447a7 Sneha Kulkarni <sneha.k@outlook.com> 1772453199 +0530	commit (amend): Rename env vars
+a72f0b0d94bbdc5c37a80f41c0da4559827447a7 901ac40cc254243b5780b915d99a87c45b758891 Arjun Nair <arjun.nair@proton.me> 1772453325 +0530	checkout: moving from main to release/1.4
+901ac40cc254243b5780b915d99a87c45b758891 6c5e76d008d7aef94864106bf72803a6ba2b7a73 Hrithvik Basak <hrithvik.basak@gmail.com> 1772453452 +0530	commit: Bump axios to 1.7.4
+6c5e76d008d7aef94864106bf72803a6ba2b7a73 d301ff414b5fdf12953cbef01f52818bafb0585b Sneha Kulkarni <sneha.k@outlook.com> 1772453580 +0530	rebase (finish): returning to refs/heads/main
+d301ff414b5fdf12953cbef01f52818bafb0585b 069f0a27e47c5f5ea5d2b6cd1717136ef800202e Arjun Nair <arjun.nair@proton.me> 1772453709 +0530	commit (initial): Add billing service skeleton
+069f0a27e47c5f5ea5d2b6cd1717136ef800202e 64bcac9141a81302a1db423369b5b87a1fddbf96 Hrithvik Basak <hrithvik.basak@gmail.com> 1772453839 +0530	commit: Fix retry logic for invoice webhook
+64bcac9141a81302a1db423369b5b87a1fddbf96 d45d0700f7d9cbcf7178a5dd18413232c351aaca Sneha Kulkarni <sneha.k@outlook.com> 1772453970 +0530	commit: Update README with deployment steps
+d45d0700f7d9cbcf7178a5dd18413232c351aaca 906013183223e775f156f6540a8310b2a42ddb50 Arjun Nair <arjun.nair@proton.me> 1772454102 +0530	merge feature/payments: Fast-forward
+906013183223e775f156f6540a8310b2a42ddb50 d1b4d1c2a8d11d2c50a7d33576eee4c505df3c3e Hrithvik Basak <hrithvik.basak@gmail.com> 1772454235 +0530	commit (amend): Rename env vars
+d1b4d1c2a8d11d2c50a7d33576eee4c505df3c3e de3c706b09ddd93adcb9cee443030f5724028f3e Sneha Kulkarni <sneha.k@outlook.com> 1772454369 +0530	checkout: moving from main to release/1.4
+de3c706b09ddd93adcb9cee443030f5724028f3e 00b63bec205c82bf4b3d38da34cb7e78f2a84cb4 Arjun Nair <arjun.nair@proton.me> 1772454504 +0530	commit: Bump axios to 1.7.4
+00b63bec205c82bf4b3d38da34cb7e78f2a84cb4 7d46373650fd4ffe3a341f6a5a2db31be3396a09 Hrithvik Basak <hrithvik.basak@gmail.com> 1772454640 +0530	rebase (finish): returning to refs/heads/main
+7d46373650fd4ffe3a341f6a5a2db31be3396a09 1822b82136e7449b4ca1212ba826aa8c4870c4c8 Sneha Kulkarni <sneha.k@outlook.com> 1772454777 +0530	commit (initial): Add billing service skeleton
+1822b82136e7449b4ca1212ba826aa8c4870c4c8 3d6f3f237d63e82d113e910e0aee3f3497d2de2d Arjun Nair <arjun.nair@proton.me> 1772454915 +0530	commit: Fix retry logic for invoice webhook
+3d6f3f237d63e82d113e910e0aee3f3497d2de2d cbfcf4ebfb71796e16e439335e6dbc3dc614f719 Hrithvik Basak <hrithvik.basak@gmail.com> 1772455054 +0530	commit: Update README with deployment steps
+cbfcf4ebfb71796e16e439335e6dbc3dc614f719 83d7f70893b989eaa6589b58b598c52b205441dd Sneha Kulkarni <sneha.k@outlook.com> 1772455194 +0530	merge feature/payments: Fast-forward
+83d7f70893b989eaa6589b58b598c52b205441dd ec791331d3c6e6028d3e6e92c9e6283f5c9e1c74 Arjun Nair <arjun.nair@proton.me> 1772455335 +0530	commit (amend): Rename env vars
+ec791331d3c6e6028d3e6e92c9e6283f5c9e1c74 ebc398baea50b2e5bd725c34ccf7614dc24cd801 Hrithvik Basak <hrithvik.basak@gmail.com> 1772455477 +0530	checkout: moving from main to release/1.4
+ebc398baea50b2e5bd725c34ccf7614dc24cd801 b2c9b762f7cb4ff75d6b5e249eeac3febaf35dde Sneha Kulkarni <sneha.k@outlook.com> 1772455620 +0530	commit: Bump axios to 1.7.4
+b2c9b762f7cb4ff75d6b5e249eeac3febaf35dde 703a318535ffc73cb857fbee9f40c3bc53dd92fd Arjun Nair <arjun.nair@proton.me> 1772455764 +0530	rebase (finish): returning to refs/heads/main
+703a318535ffc73cb857fbee9f40c3bc53dd92fd 651c5b323b8bb67f3f1e4428ac5508610a0e1e12 Hrithvik Basak <hrithvik.basak@gmail.com> 1772455909 +0530	commit (initial): Add billing service skeleton
+651c5b323b8bb67f3f1e4428ac5508610a0e1e12 499e459070066ffaa80c115587d35e7948c53af2 Sneha Kulkarni <sneha.k@outlook.com> 1772456055 +0530	commit: Fix retry logic for invoice webhook
+499e459070066ffaa80c115587d35e7948c53af2 6eb7a42a66e57597f91fcb0a865b76672c922f5b Arjun Nair <arjun.nair@proton.me> 1772456202 +0530	commit: Update README with deployment steps
+6eb7a42a66e57597f91fcb0a865b76672c922f5b 0d0b7370dff18e31b5b251f126316448f6ad60fd Hrithvik Basak <hrithvik.basak@gmail.com> 1772456350 +0530	merge feature/payments: Fast-forward
+0d0b7370dff18e31b5b251f126316448f6ad60fd 0853c4066f503bbdc031f7c469b36578e718e505 Sneha Kulkarni <sneha.k@outlook.com> 1772456499 +0530	commit (amend): Rename env vars
+0853c4066f503bbdc031f7c469b36578e718e505 496c80145852f73967f7bd6fb3a5a724f907edd5 Arjun Nair <arjun.nair@proton.me> 1772456649 +0530	checkout: moving from main to release/1.4
+496c80145852f73967f7bd6fb3a5a724f907edd5 a4fc6a0a17591fdfa23c39a5429e0dd68499c099 Hrithvik Basak <hrithvik.basak@gmail.com> 1772456800 +0530	commit: Bump axios to 1.7.4
+a4fc6a0a17591fdfa23c39a5429e0dd68499c099 7afe74700227e8bb19c921581c8a27c369159eed Sneha Kulkarni <sneha.k@outlook.com> 1772456952 +0530	rebase (finish): returning to refs/heads/main
+7afe74700227e8bb19c921581c8a27c369159eed 7b6df4e3bf05c0984d221ffafc707b18a5ebcba4 Arjun Nair <arjun.nair@proton.me> 1772457105 +0530	commit (initial): Add billing service skeleton
+7b6df4e3bf05c0984d221ffafc707b18a5ebcba4 e3772900d6d436150bbd01361ecf5b636e818efd Hrithvik Basak <hrithvik.basak@gmail.com> 1772457259 +0530	commit: Fix retry logic for invoice webhook
+e3772900d6d436150bbd01361ecf5b636e818efd 47720bff31013fbc4b38666f5195a7edf4b3d063 Sneha Kulkarni <sneha.k@outlook.com> 1772457414 +0530	commit: Update README with deployment steps
+47720bff31013fbc4b38666f5195a7edf4b3d063 ed728e3bfc016c2a0c47fcd189bf0658ed445505 Arjun Nair <arjun.nair@proton.me> 1772457570 +0530	merge feature/payments: Fast-forward

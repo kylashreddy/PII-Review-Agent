@@ -1,0 +1,84 @@
+{
+  "type": "object",
+  "properties": {
+    "enabled": {
+      "title": "Enable the assistant",
+      "description": "false switches the PII Review Assistant off on every page. Default: true.",
+      "type": "boolean"
+    },
+    "defaultStage": {
+      "title": "Default stage",
+      "description": "Stage shown to reviewers who have not picked one: L1 (Identify) or L2 (Verify). Default: L2.",
+      "type": "string",
+      "enum": [
+        "L1",
+        "L2"
+      ]
+    },
+    "pageSetup": {
+      "title": "Company-wide page setup",
+      "description": "CSS selectors for the two task documents and the label spans, so reviewers do not have to set up the page. A reviewer's own saved setup still wins.",
+      "type": "object",
+      "properties": {
+        "leftDocument": {
+          "type": "string"
+        },
+        "rightDocument": {
+          "type": "string"
+        },
+        "label": {
+          "type": "object",
+          "properties": {
+            "rightLabelSpan": {
+              "type": "string"
+            },
+            "labelNameAttributes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "labelClassPrefixes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "labelNameFromChild": {
+              "type": "string"
+            },
+            "ignoreInText": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "extraKnownNames": {
+      "title": "Extra known names",
+      "description": "Public organisation names added to the built-in business names list (not PII; redacting one is over-scrubbing).",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supportContact": {
+      "title": "Support contact",
+      "description": "Shown in the panel footer, e.g. an email address or a channel name.",
+      "type": "string"
+    },
+    "model": {
+      "title": "On-device model",
+      "description": "Model suggestions for names, companies, addresses and usernames (runs in the browser; text never leaves it). user: each reviewer decides in the extension options (default off). on: on for everyone. off: off for everyone. Default: user.",
+      "type": "string",
+      "enum": [
+        "user",
+        "on",
+        "off"
+      ]
+    }
+  }
+}

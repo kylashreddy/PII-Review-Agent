@@ -1,0 +1,15 @@
+{
+  "ExtensionInstallForcelist": [
+    "EXTENSION_ID;UPDATE_URL"
+  ],
+  "3rdparty": {
+    "extensions": {
+      "EXTENSION_ID": {
+        "enabled": true,
+        "defaultStage": "L2",
+        "supportContact": "#pii-review-help",
+        "extraKnownNames": ["Peak Talent"]
+      }
+    }
+  }
+}

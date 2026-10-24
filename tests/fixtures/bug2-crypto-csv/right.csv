@@ -1,0 +1,5 @@
+record_id,department,status,crypto_wallet
+R000001,Field Services,active,0xab0432d43654a1ead1505a6a6dc40e0d9efdd83d
+R000002,Operations,inactive,LTLU2kS3V7FExURsjAAUhvetrGLHbxREHt
+R000003,Field Services,active,0x4156cb3c75a90ee7f7b9fbd8e25cfc7f0002e197
+R000004,Support,active,3RfVG7mgQJcspWiSvvFrrq23zJm2FBjVbk

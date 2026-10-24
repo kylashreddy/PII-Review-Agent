@@ -1,0 +1,29 @@
+@use 'sass:math';
+@mixin card($pad) { padding: $pad; }
+.box { @include card(4px); @extend .base; }
+
+/**
+ * Adds two numbers.
+ * @param {number} a first
+ * @returns {number} the sum
+ * @deprecated use addAll
+ */
+
+@Component({ selector: 'app-root' })
+export class AppComponent {
+  @Input() title;
+  @HostListener('click') onClick() {}
+}
+
+class Svc:
+    @staticmethod
+    def build(): ...
+
+    @property
+    def name(self): ...
+
+@Override
+public String toString() { return "x"; }
+
+@app.route('/health')
+def health(): ...

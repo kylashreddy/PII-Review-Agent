@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Self-hosted update manifest. Host it at UPDATE_URL next to the .crx; Chrome checks it
+     every few hours. Raise "version" (and the file name) with every release. -->
+<gupdate xmlns="http://www.google.com/update2/response" protocol="2.0">
+  <app appid="EXTENSION_ID">
+    <updatecheck codebase="https://REPLACE-intranet-host/pii-review-assistant/pii-review-assistant-2.0.0.crx" version="2.0.0" />
+  </app>
+</gupdate>

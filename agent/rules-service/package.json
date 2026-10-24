@@ -1,0 +1,12 @@
+{
+  "name": "pii-rules-service",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The PII Review Assistant extension's rules engine behind a JSON interface (stdio or localhost HTTP). No dependencies: it loads the extension's scripts from this repository.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test 'test/*.test.js'"
+  },
+  "engines": { "node": ">=22" }
+}

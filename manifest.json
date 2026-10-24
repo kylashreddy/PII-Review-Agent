@@ -1,0 +1,140 @@
+{
+  "manifest_version": 3,
+  "name": "PII Review Assistant",
+  "version": "2.1.0",
+  "version_name": "2.1.0 beta 12",
+  "description": "Helps reviewers compare the original and reviewed documents on Peak Talent and spot missed, wrong or over-scrubbed PII labels. Runs entirely in your browser.",
+  "minimum_chrome_version": "105",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": [
+    "storage",
+    "offscreen"
+  ],
+  "host_permissions": [
+    "https://*.peaktalent.ai/*",
+    "https://*.peaktalent.co/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "cross_origin_embedder_policy": {
+    "value": "require-corp"
+  },
+  "cross_origin_opener_policy": {
+    "value": "same-origin"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.peaktalent.ai/*",
+        "https://*.peaktalent.co/*"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false,
+      "css": [
+        "highlight.css"
+      ],
+      "js": [
+        "core/namespace.js",
+        "core/edition.js",
+        "core/policy.js",
+        "selectors.js",
+        "core/labels.js",
+        "core/util.js",
+        "core/known-names.js",
+        "core/knowledge.js",
+        "core/redaction-rules.js",
+        "core/pii-keys.js",
+        "core/structured.js",
+        "data/names.js",
+        "core/names.js",
+        "detectors/person-name.js",
+        "detectors/email-address.js",
+        "detectors/contact-number.js",
+        "detectors/date.js",
+        "detectors/person-username.js",
+        "detectors/address.js",
+        "detectors/business-name.js",
+        "detectors/account-number.js",
+        "detectors/ifsc-code.js",
+        "detectors/pan-card.js",
+        "detectors/ip-address.js",
+        "detectors/api-keys.js",
+        "detectors/password.js",
+        "detectors/aadhaar.js",
+        "detectors/driving-license.js",
+        "detectors/voter-id.js",
+        "detectors/card-number.js",
+        "detectors/upi-id.js",
+        "data/whitelisted-domains.js",
+        "detectors/url.js",
+        "detectors/vehicle-plate.js",
+        "detectors/gps.js",
+        "detectors/postal-code.js",
+        "detectors/crypto-wallet.js",
+        "detectors/imei.js",
+        "detectors/passport.js",
+        "detectors/india-ids.js",
+        "detectors/us-ids.js",
+        "detectors/brazil-ids.js",
+        "detectors/indonesia-ids.js",
+        "core/table-context.js",
+        "detectors/structured-fields.js",
+        "core/engine.js",
+        "core/hybrid.js",
+        "core/model-client.js",
+        "core/text-model.js",
+        "core/dom.js",
+        "core/autodetect.js",
+        "core/config.js",
+        "core/layout.js",
+        "compare.js",
+        "redaction.js",
+        "identify.js",
+        "core/agent-plan.js",
+        "highlight.js",
+        "core/label-tags.js",
+        "core/report.js",
+        "core/select-check.js",
+        "core/page-watcher.js",
+        "panel/brand.js",
+        "panel/panel-styles.js",
+        "panel/decisions.js",
+        "panel/panel.js",
+        "panel/agent-panel.js",
+        "panel/picker.js",
+        "content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "data/business-names.json",
+        "data/kb/meta.json",
+        "data/kb/companies.json",
+        "data/kb/people.json",
+        "data/kb/domains.json"
+      ],
+      "matches": [
+        "https://*.peaktalent.ai/*",
+        "https://*.peaktalent.co/*"
+      ]
+    }
+  ],
+  "storage": {
+    "managed_schema": "managed_schema.json"
+  }
+}

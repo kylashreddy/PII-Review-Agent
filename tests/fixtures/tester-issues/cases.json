@@ -1,0 +1,1230 @@
+{
+ "about": "Issues the team reported while testing (Errors sheet). Each case: text that must not be flagged (notPii) and PII that must be found (find), with the rules alone and with the model's guesses given in 'model'. #2 (extension stopped working) is a tool bug, not a detection case.",
+ "cases": [
+  {
+   "id": "css-at-rules",
+   "issues": "#3, #5",
+   "file": "styles.css",
+   "text": "@media (max-width: 600px) {\n  .card { padding: 8px; }\n}\n@import url('theme.css');\n@font-face { font-family: Inter; }\n@keyframes spin { to { transform: rotate(360deg); } }\n",
+   "notPii": [
+    "@media",
+    "@import",
+    "@font-face",
+    "@keyframes",
+    "media",
+    "import"
+   ],
+   "find": [],
+   "model": []
+  },
+  {
+   "id": "json-ld-keys",
+   "issues": "#5",
+   "file": "page.json",
+   "text": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Person\",\n  \"@id\": \"#author\",\n  \"name\": \"Anita Desai\"\n}\n",
+   "notPii": [
+    "@context",
+    "@type",
+    "@id",
+    "context",
+    "type",
+    "Person"
+   ],
+   "find": [
+    {
+     "text": "Anita Desai",
+     "label": "Person Name"
+    }
+   ],
+   "model": []
+  },
+  {
+   "id": "java-annotations",
+   "issues": "#13, #16",
+   "file": "AppConfig.java",
+   "text": "package com.acme.config;\n\n@Configuration\n@EnableWebSecurity\npublic class AppConfig {\n    @Autowired\n    private UserService userService;\n\n    @Bean\n    @Override\n    public PasswordEncoder passwordEncoder() {\n        return new BCryptPasswordEncoder();\n    }\n    @Value(\"${app.name}\")\n    private String appName;\n}\n",
+   "notPii": [
+    "@Configuration",
+    "@EnableWebSecurity",
+    "@Autowired",
+    "@Bean",
+    "@Override",
+    "@Value",
+    "Autowired",
+    "Configuration",
+    "app.name"
+   ],
+   "find": [],
+   "model": [
+    {
+     "text": "@Autowired",
+     "label": "Business Name",
+     "score": 0.4
+    },
+    {
+     "text": "Configuration",
+     "label": "Business Name",
+     "score": 0.3
+    }
+   ]
+  },
+  {
+   "id": "ts-decorators",
+   "issues": "#16",
+   "file": "app.component.ts",
+   "text": "import { Component, Input } from '@angular/core';\n@Component({ selector: 'app-root', templateUrl: './app.component.html' })\nexport class AppComponent {\n  @Input() title: string;\n  @Output() changed = new EventEmitter();\n  @HostListener('window:resize') onResize() {}\n}\n",
+   "notPii": [
+    "@angular/core",
+    "@Component",
+    "@Input",
+    "@Output",
+    "@HostListener",
+    "angular",
+    "Component"
+   ],
+   "find": [],
+   "model": []
+  },
+  {
+   "id": "word-after-pass-user",
+   "issues": "#7",
+   "file": "notes.txt",
+   "text": "If the build fails, pass recreate to the script.\nThe user should pass --force to rebuild.\nuser chooses a name for the project.\nRun the script with pass recreate and then user login.\n",
+   "notPii": [
+    "recreate",
+    "--force",
+    "login",
+    "chooses"
+   ],
+   "find": [],
+   "model": []
+  },
+  {
+   "id": "name-replace",
+   "issues": "#15",
+   "file": "utils.js",
+   "text": "function clean(name) {\n  const out = name.replace(/\\s+/g, ' ').trim();\n  return name.toLowerCase() + name.split(' ')[0];\n}\nconst user = { name: \"John Smith\" };\nname = \"Priya Raman\";\n",
+   "notPii": [
+    "name.replace",
+    "name.toLowerCase",
+    "name.split",
+    "clean",
+    "replace"
+   ],
+   "find": [
+    {
+     "text": "John Smith",
+     "label": "Person Name"
+    },
+    {
+     "text": "Priya Raman",
+     "label": "Person Name"
+    }
+   ],
+   "model": [
+    {
+     "text": "name.replace",
+     "label": "Person Name",
+     "score": 0.5
+    },
+    {
+     "text": "John Smith",
+     "label": "Person Name",
+     "score": 0.6
+    },
+    {
+     "text": "Priya Raman",
+     "label": "Person Name",
+     "score": 0.6
+    }
+   ]
+  },
+  {
+   "id": "env-variables",
+   "issues": "#9, #10, #11",
+   "file": "deploy.sh",
+   "text": "export DB_PASSWORD=$DB_PASSWORD\nAPI_KEY=${API_KEY}\npassword: ${{ secrets.DB_PASS }}\nconst token = process.env.GITHUB_TOKEN;\nconst pw = process.env['DB_PASSWORD'];\nuser=$USER\nsecret=%APP_SECRET%\npassword = os.environ[\"DB_PASSWORD\"]\n",
+   "notPii": [
+    "$DB_PASSWORD",
+    "${API_KEY}",
+    "${{ secrets.DB_PASS }}",
+    "process.env.GITHUB_TOKEN",
+    "DB_PASSWORD",
+    "$USER",
+    "%APP_SECRET%",
+    "os.environ",
+    "GITHUB_TOKEN"
+   ],
+   "find": [],
+   "model": []
+  },
+  {
+   "id": "localhost-urls",
+   "issues": "#8",
+   "file": "README.md",
+   "text": "Open http://localhost:3000/login and http://127.0.0.1:8080/api.\nThe API runs at https://localhost:8443/v1/users and http://0.0.0.0:5000.\n",
+   "notPii": [
+    "http://localhost:3000/login",
+    "localhost",
+    "127.0.0.1",
+    "http://127.0.0.1:8080/api",
+    "https://localhost:8443/v1/users",
+    "0.0.0.0"
+   ],
+   "find": [],
+   "model": []
+  },
+  {
+   "id": "file-names",
+   "issues": "#17",
+   "file": "setup.md",
+   "text": "Copy the token into auth.json and keep config.yaml and secrets.env out of git.\nusername stored in auth.json\nuser: auth.json\nSee package.json and tsconfig.json.\n",
+   "notPii": [
+    "auth.json",
+    "config.yaml",
+    "secrets.env",
+    "package.json",
+    "tsconfig.json"
+   ],
+   "find": [],
+   "model": [
+    {
+     "text": "auth.json",
+     "label": "Person Username",
+     "score": 0.8
+    },
+    {
+     "text": "config.yaml",
+     "label": "Person Username",
+     "score": 0.5
+    }
+   ]
+  },
+  {
+   "id": "platform-labels-and-files",
+   "issues": "#12",
+   "file": "task.txt",
+   "text": "Annotate Here\nUpload report_final.pdf and invoice-2024.xlsx.\nAnnotate Here: label every name in data.csv.\n",
+   "notPii": [
+    "Annotate Here",
+    "Annotate",
+    "report_final.pdf",
+    "invoice-2024.xlsx",
+    "data.csv"
+   ],
+   "find": [],
+   "model": [
+    {
+     "text": "report_final.pdf",
+     "label": "Person Username",
+     "score": 0.5
+    }
+   ]
+  },
+  {
+   "id": "from-is-not-a-name",
+   "issues": "#14",
+   "file": "email.txt",
+   "text": "From: Rahul Verma\nTo: Neha Gupta\nI got this from the manager.\nfrom the team at Acme, regards, from Sanjay\n",
+   "notPii": [
+    "from",
+    "From"
+   ],
+   "find": [
+    {
+     "text": "Rahul Verma",
+     "label": "Person Name"
+    },
+    {
+     "text": "Neha Gupta",
+     "label": "Person Name"
+    }
+   ],
+   "model": [
+    {
+     "text": "Rahul Verma",
+     "label": "Person Name",
+     "score": 0.7
+    },
+    {
+     "text": "Neha Gupta",
+     "label": "Person Name",
+     "score": 0.7
+    }
+   ]
+  },
+  {
+   "id": "sentence-not-business",
+   "issues": "#18, #20",
+   "file": "note.txt",
+   "text": "We are pleased to inform you that the Customer Success Team Will Contact You Shortly.\nThank you for choosing Our Premium Support Services For Your Business.\n",
+   "notPii": [
+    "Premium Support Services",
+    "Our Premium Support Services For Your Business",
+    "Customer Success Team",
+    "Customer Success Team Will Contact You Shortly"
+   ],
+   "find": [],
+   "model": [
+    {
+     "text": "Customer Success Team",
+     "label": "Business Name",
+     "score": 0.38
+    }
+   ]
+  },
+  {
+   "id": "form-field-keys",
+   "issues": "#19",
+   "file": "form.json",
+   "text": "{\n  \"name\": \"\",\n  \"street\": \"\",\n  \"city\": \"\",\n  \"state\": \"\",\n  \"zipcode\": \"\"\n}\n<input name=\"name\"> <input name=\"street\"> <input name=\"city\"> <input name=\"state\"> <input name=\"zipcode\">\nfields: name, street, city, state, zipcode\nform.name, form.street, form.city\n",
+   "notPii": [
+    "name",
+    "street",
+    "city",
+    "state",
+    "zipcode",
+    "fields",
+    "form.name",
+    "form.street",
+    "form.city"
+   ],
+   "find": [],
+   "model": [
+    {
+     "text": "street",
+     "label": "Address",
+     "score": 0.3
+    },
+    {
+     "text": "form.name",
+     "label": "Person Name",
+     "score": 0.4
+    }
+   ]
+  },
+  {
+   "id": "hex-keys",
+   "issues": "#4",
+   "file": "release.txt",
+   "text": "commit 3f786850e387550fdab836ed7e6dc881de23001b\nsha256: 2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae\nAPI secret: a94a8fe5ccb19ba61c4c0873d391e987982fbbd3\nhmac_key = 9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08\nsession token 5d41402abc4b2a76b9719d911017c592\n",
+   "notPii": [
+    "3f786850e387550fdab836ed7e6dc881de23001b",
+    "2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae"
+   ],
+   "find": [
+    {
+     "text": "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3",
+     "label": "Credentials"
+    },
+    {
+     "text": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+     "label": "Credentials"
+    },
+    {
+     "text": "5d41402abc4b2a76b9719d911017c592",
+     "label": "Credentials"
+    }
+   ],
+   "model": []
+  },
+  {
+   "id": "name-handles",
+   "issues": "#6",
+   "file": "chat.txt",
+   "text": "Ping bharat.gangaiah on Slack or mail bharat.gangaiah@acme.com.\nAssigned to bharat_gangaiah, reviewed by bharat-gangaiah.\nOwner: Bharat Gangaiah\n",
+   "notPii": [
+    "Ping bharat.gangaiah"
+   ],
+   "find": [
+    {
+     "text": "bharat.gangaiah",
+     "label": "Person Username",
+     "needsModel": true
+    },
+    {
+     "text": "bharat_gangaiah",
+     "label": "Person Username",
+     "needsModel": true
+    },
+    {
+     "text": "bharat-gangaiah",
+     "label": "Person Username",
+     "needsModel": true
+    },
+    {
+     "text": "bharat.gangaiah@acme.com",
+     "label": "Email Address"
+    },
+    {
+     "text": "Bharat Gangaiah",
+     "label": "Person Name",
+     "needsModel": true
+    }
+   ],
+   "model": [
+    {
+     "text": "Bharat Gangaiah",
+     "label": "Person Name",
+     "score": 0.6
+    },
+    {
+     "text": "bharat-gangaiah",
+     "label": "Person Name",
+     "score": 0.6
+    },
+    {
+     "text": "Ping bharat.gangaiah",
+     "label": "Person Name",
+     "score": 0.19
+    }
+   ]
+  },
+  {
+   "id": "gmail-label-names",
+   "issues": "screenshot 2026-10-19 (Gmail labels JSONL)",
+   "file": "verse~~gmail~~rohansing.rajaput@verse.in~~labels~~_pages~~page_000001.jsonl",
+   "text": "{\"id\":\"CHAT\",\"name\":\"CHAT\",\"messageListVisibility\":\"hide\",\"labelListVisibility\":\"labelHide\",\"type\":\"system\",\"messagesTotal\":0,\"messagesUnread\":0,\"threadsTotal\":0,\"threadsUnread\":0}\n{\"id\":\"SENT\",\"name\":\"SENT\",\"type\":\"system\",\"messagesTotal\":694,\"messagesUnread\":0,\"threadsTotal\":543,\"threadsUnread\":0}\n{\"id\":\"INBOX\",\"name\":\"INBOX\",\"type\":\"system\",\"messagesTotal\":67133,\"messagesUnread\":1673,\"threadsTotal\":33022,\"threadsUnread\":430}\n{\"id\":\"IMPORTANT\",\"name\":\"IMPORTANT\",\"messageListVisibility\":\"hide\",\"labelListVisibility\":\"labelHide\",\"type\":\"system\",\"messagesTotal\":38930,\"messagesUnread\":1209,\"threadsTotal\":18746,\"threadsUnread\":347}\n{\"id\":\"TRASH\",\"name\":\"TRASH\",\"messageListVisibility\":\"hide\",\"labelListVisibility\":\"labelHide\",\"type\":\"system\",\"messagesTotal\":0,\"messagesUnread\":0,\"threadsTotal\":0,\"threadsUnread\":0}\n{\"id\":\"DRAFT\",\"name\":\"DRAFT\",\"type\":\"system\",\"messagesTotal\":2,\"messagesUnread\":0,\"threadsTotal\":2,\"threadsUnread\":0}\n{\"id\":\"SPAM\",\"name\":\"SPAM\",\"messageListVisibility\":\"hide\",\"labelListVisibility\":\"labelHide\",\"type\":\"system\",\"messagesTotal\":0,\"messagesUnread\":0,\"threadsTotal\":0,\"threadsUnread\":0}\n{\"id\":\"CATEGORY_FORUMS\",\"name\":\"CATEGORY_FORUMS\",\"messageListVisibility\":\"hide\",\"labelListVisibility\":\"labelHide\",\"type\":\"system\",\"messagesTotal\":0,\"messagesUnread\":0,\"threadsTotal\":0,\"threadsUnread\":0}\n{\"id\":\"Label_3\",\"name\":\"Receipts\",\"type\":\"user\",\"messagesTotal\":12,\"messagesUnread\":0,\"threadsTotal\":10,\"threadsUnread\":0}\n{\"id\":\"u42\",\"name\":\"Ravi Kumar\",\"email\":\"ravi@example.com\"}\n",
+   "notPii": [
+    "CHAT",
+    "SENT",
+    "INBOX",
+    "IMPORTANT",
+    "TRASH",
+    "DRAFT",
+    "SPAM",
+    "CATEGORY_FORUMS",
+    "Receipts",
+    "Label_3",
+    "system"
+   ],
+   "find": [
+    {
+     "text": "Ravi Kumar",
+     "label": "Person Name"
+    },
+    {
+     "text": "ravi@example.com",
+     "label": "Email Address"
+    }
+   ],
+   "model": [
+    {
+     "text": "SPAM",
+     "label": "Business Name",
+     "score": 0.6
+    },
+    {
+     "text": "Receipts",
+     "label": "Person Name",
+     "score": 0.6
+    },
+    {
+     "text": "INBOX",
+     "label": "Person Name",
+     "score": 0.4
+    }
+   ]
+  },
+  {
+   "id": "email-signature-names",
+   "issues": "screenshot 2026-10-19 (e-mail signature)",
+   "file": "buddyloan~~gmail~~support@buddyloan.com~~messages~~1875f662e7d74509.eml",
+   "text": "[signature_2379530794]<http://valueleaf.com/>\n\nAmi Babu T C\nAVP - Group HR\nValueleaf Services (India) Pvt. Ltd.\n#1187, 7th Sector, HSR Layout\n5th Main Rd.,21st Cross\nBengaluru - 560102\nM: +91 9591340965\nW: www.valueleaf.com<http://www.valueleaf.com/>\n\nOn 05/04/23, 4:51 PM, \"Ami Babu T C\" <ami.babu@valueleaf.com> wrote:\nFrom: Support Team <support@buddyloan.com>\nTo: \"HR Desk\" <hr@valueleaf.com>\n",
+   "notPii": [
+    "AVP - Group HR",
+    "Support Team",
+    "HR Desk",
+    "signature_2379530794"
+   ],
+   "find": [
+    {
+     "text": "Ami Babu T C",
+     "label": "Person Name"
+    },
+    {
+     "text": "Valueleaf Services (India) Pvt. Ltd",
+     "label": "Business Name"
+    },
+    {
+     "text": "ami.babu@valueleaf.com",
+     "label": "Email Address"
+    },
+    {
+     "text": "+91 9591340965",
+     "label": "Contact Number"
+    }
+   ],
+   "model": [
+    {
+     "text": "Ami Babu T C",
+     "label": "Business Name",
+     "score": 0.25
+    },
+    {
+     "text": "AVP - Group HR",
+     "label": "Person Name",
+     "score": 0.05
+    }
+   ]
+  },
+  {
+   "id": "standalone-first-names",
+   "issues": "names #5, #7",
+   "file": "chat.txt",
+   "text": "Ankit approved the PR yesterday.\nSpoke to Divya about the release.\nThanks Rohan, will check.\nPlease ask Sneha to review it.\nKavya and Arjun are on leave.\nmeeting moved, Pooja will share notes\nAssigned: Vikram\n",
+   "notPii": [
+    "approved",
+    "Spoke",
+    "Thanks",
+    "Please",
+    "Assigned"
+   ],
+   "find": [
+    {
+     "text": "Ankit",
+     "label": "Person Name"
+    },
+    {
+     "text": "Divya",
+     "label": "Person Name"
+    },
+    {
+     "text": "Rohan",
+     "label": "Person Name"
+    },
+    {
+     "text": "Sneha",
+     "label": "Person Name"
+    },
+    {
+     "text": "Kavya",
+     "label": "Person Name"
+    },
+    {
+     "text": "Arjun",
+     "label": "Person Name"
+    },
+    {
+     "text": "Pooja",
+     "label": "Person Name"
+    },
+    {
+     "text": "Vikram",
+     "label": "Person Name"
+    }
+   ],
+   "model": []
+  },
+  {
+   "id": "standalone-surnames",
+   "issues": "names #5, #7",
+   "file": "notes.txt",
+   "text": "Meeting with Sharma tomorrow.\nGupta sent the invoice.\nThe report from Iyer is pending.\nReddy and Nair will join.\nPing Kulkarni about the build.\n",
+   "notPii": [
+    "Meeting",
+    "Ping",
+    "The report"
+   ],
+   "find": [
+    {
+     "text": "Sharma",
+     "label": "Person Name"
+    },
+    {
+     "text": "Gupta",
+     "label": "Person Name"
+    },
+    {
+     "text": "Iyer",
+     "label": "Person Name"
+    },
+    {
+     "text": "Reddy",
+     "label": "Person Name"
+    },
+    {
+     "text": "Nair",
+     "label": "Person Name"
+    },
+    {
+     "text": "Kulkarni",
+     "label": "Person Name"
+    }
+   ],
+   "model": []
+  },
+  {
+   "id": "name-then-parts",
+   "issues": "names #5, #7",
+   "file": "email.txt",
+   "text": "Hi team,\nPriya Raman joined as lead. Priya will own onboarding; Raman's manager is Suresh Patel.\nPatel approved it.\nRegards,\nVenkat\n",
+   "notPii": [
+    "Hi team",
+    "Regards"
+   ],
+   "find": [
+    {
+     "text": "Priya Raman",
+     "label": "Person Name"
+    },
+    {
+     "text": "Priya",
+     "label": "Person Name"
+    },
+    {
+     "text": "Raman",
+     "label": "Person Name"
+    },
+    {
+     "text": "Suresh Patel",
+     "label": "Person Name"
+    },
+    {
+     "text": "Patel",
+     "label": "Person Name"
+    },
+    {
+     "text": "Venkat",
+     "label": "Person Name"
+    }
+   ],
+   "model": []
+  },
+  {
+   "id": "capitalised-words-not-names",
+   "issues": "names #2, #3, #6",
+   "file": "form.txt",
+   "text": "Status: Open\nPriority: High\nAssigned To: Team Alpha\nDay 1: Orientation\nDay 2: Training\nIndependence Day holiday\nMonday Standup\nGoogle Meet link shared\nUse Google Drive and Microsoft Teams.\nSent from my iPhone\nBest Regards\nKind Regards\nHappy Birthday\nGood Morning Team\nCustomer Support\nAction Items\nNext Steps\n",
+   "notPii": [
+    "Status",
+    "Open",
+    "Priority",
+    "High",
+    "Team Alpha",
+    "Day 1",
+    "Day 2",
+    "Independence Day",
+    "Monday Standup",
+    "Google Meet",
+    "Google Drive",
+    "Microsoft Teams",
+    "iPhone",
+    "Best Regards",
+    "Kind Regards",
+    "Kind",
+    "Happy Birthday",
+    "Good Morning Team",
+    "Customer Support",
+    "Action Items",
+    "Next Steps"
+   ],
+   "find": [],
+   "model": []
+  },
+  {
+   "id": "day-not-a-name",
+   "issues": "names #3",
+   "file": "plan.md",
+   "text": "## Day 3\nOn Day 4 we ship.\nMemorial Day sale ends Friday.\nNew Year Day plans\nDay Shift / Night Shift\n",
+   "notPii": [
+    "Day 3",
+    "Day 4",
+    "Memorial Day",
+    "Friday",
+    "New Year Day",
+    "Day Shift",
+    "Night Shift"
+   ],
+   "find": [],
+   "model": []
+  },
+  {
+   "id": "companies-with-person-names",
+   "issues": "names (false alarms)",
+   "file": "vendors.txt",
+   "text": "Perusahaan: PT Sinar Jaya Abadi\nVendor: Bharat Petroleum Corporation\nPrepared by: Field Services\nShip To:\nIndigo Crest Hospitality\nM/s Ravi Traders supplied the parts.\nReddy Labs and Gandhi Nagar office\nContact Will Contact You Shortly\n",
+   "notPii": [
+    "Sinar Jaya Abadi",
+    "Jaya Abadi",
+    "Field",
+    "Indigo Crest Hospitality",
+    "Ravi",
+    "Reddy",
+    "Gandhi",
+    "Will",
+    "You",
+    "Bharat"
+   ],
+   "find": [
+    {
+     "text": "Bharat Petroleum Corporation",
+     "label": "Business Name"
+    },
+    {
+     "text": "Ravi Traders",
+     "label": "Business Name"
+    },
+    {
+     "text": "Reddy Labs",
+     "label": "Business Name"
+    }
+   ],
+   "model": []
+  },
+  {
+   "id": "passport-pipe-table-no-header",
+   "issues": "screenshot 2026-10-19 (xlsx shown as a pipe table)",
+   "file": "golden_dataset_pii_oct_26_batch2~~by-pii-type~~id_passport~~id_passport__office_document__office_xlsx__33.xlsx-fe036b3a",
+   "text": "| R000003 | Support | A6286257 | escalated |\n| R000004 | Field Services | B0661774 | active |\n| R000005 | Procurement | B8913267 | pending review |\n| R000006 | Compliance | A1234626 | pending review |\n| R000007 | Operations | CC942379 | active |\n| R000008 | Finance | BQ484890 | archived |\n| R000009 | People Ops | XN231660 | escalated |\n",
+   "notPii": [
+    "R000003",
+    "R000004",
+    "R000009",
+    "Support",
+    "Field Services",
+    "escalated",
+    "pending review"
+   ],
+   "find": [
+    {
+     "text": "A6286257",
+     "label": "Credentials"
+    },
+    {
+     "text": "B0661774",
+     "label": "Credentials"
+    },
+    {
+     "text": "B8913267",
+     "label": "Credentials"
+    },
+    {
+     "text": "A1234626",
+     "label": "Credentials"
+    },
+    {
+     "text": "CC942379",
+     "label": "Credentials"
+    },
+    {
+     "text": "BQ484890",
+     "label": "Credentials"
+    },
+    {
+     "text": "XN231660",
+     "label": "Credentials"
+    }
+   ],
+   "model": []
+  },
+  {
+   "id": "passport-pipe-table-header",
+   "issues": "screenshot 2026-10-19 (xlsx shown as a pipe table)",
+   "file": "golden_dataset_pii_oct_26_batch2~~by-pii-type~~id_passport~~id_passport__office_document__office_xlsx__33.xlsx-fe036b3a",
+   "text": "| record_id | department | value | status |\n|---|---|---|---|\n| R000003 | Support | A6286257 | escalated |\n| R000004 | Field Services | B0661774 | active |\n| R000005 | Procurement | B8913267 | pending review |\n| R000006 | Compliance | A1234626 | pending review |\n| R000007 | Operations | CC942379 | active |\n| R000008 | Finance | BQ484890 | archived |\n| R000009 | People Ops | XN231660 | escalated |\n",
+   "notPii": [
+    "R000003",
+    "R000004",
+    "R000009",
+    "Support",
+    "Field Services",
+    "escalated",
+    "pending review"
+   ],
+   "find": [
+    {
+     "text": "A6286257",
+     "label": "Credentials"
+    },
+    {
+     "text": "B0661774",
+     "label": "Credentials"
+    },
+    {
+     "text": "B8913267",
+     "label": "Credentials"
+    },
+    {
+     "text": "A1234626",
+     "label": "Credentials"
+    },
+    {
+     "text": "CC942379",
+     "label": "Credentials"
+    },
+    {
+     "text": "BQ484890",
+     "label": "Credentials"
+    },
+    {
+     "text": "XN231660",
+     "label": "Credentials"
+    }
+   ],
+   "model": []
+  },
+  {
+   "id": "initials-first-names",
+   "issues": "names: missed / wrong span (2026-10-22)",
+   "file": "team.txt",
+   "text": "Reviewed by K Rahul Sai and B. Ashritha.\nAssigned to: Abishek A\nOwner: Juhi G\nPrepared by K. Venkata Ramana Rao\nThanks, V Lakshmi\n",
+   "notPii": [
+    "Reviewed",
+    "Assigned",
+    "Owner",
+    "Prepared",
+    "Thanks"
+   ],
+   "find": [
+    {
+     "text": "K Rahul Sai",
+     "label": "Person Name"
+    },
+    {
+     "text": "B. Ashritha",
+     "label": "Person Name"
+    },
+    {
+     "text": "Abishek A",
+     "label": "Person Name"
+    },
+    {
+     "text": "Juhi G",
+     "label": "Person Name"
+    },
+    {
+     "text": "K. Venkata Ramana Rao",
+     "label": "Person Name"
+    },
+    {
+     "text": "V Lakshmi",
+     "label": "Person Name"
+    }
+   ],
+   "model": []
+  },
+  {
+   "id": "surname-first-names",
+   "issues": "names: missed / wrong span (2026-10-22)",
+   "file": "hr.txt",
+   "text": "Employee: Busireddy Kylash Reddy\nBusireddy Kylash Reddy joined in March.\nKolli Sai Teja and Gaddam Vamshi Krishna will attend.\nMeeting with Annamaneni Harshavardhan tomorrow.\n",
+   "notPii": [
+    "Employee",
+    "Meeting",
+    "March"
+   ],
+   "find": [
+    {
+     "text": "Busireddy Kylash Reddy",
+     "label": "Person Name"
+    },
+    {
+     "text": "Kolli Sai Teja",
+     "label": "Person Name"
+    },
+    {
+     "text": "Gaddam Vamshi Krishna",
+     "label": "Person Name"
+    },
+    {
+     "text": "Annamaneni Harshavardhan",
+     "label": "Person Name"
+    }
+   ],
+   "model": []
+  },
+  {
+   "id": "lower-and-upper-case-names",
+   "issues": "names: missed / wrong span (2026-10-22)",
+   "file": "form.txt",
+   "text": "NAME: RAVI KUMAR SHARMA\nCustomer: PRIYA RAMAN\nsigned: ravi kumar\nfrom ankit sharma to divya nair\n",
+   "notPii": [
+    "NAME",
+    "Customer",
+    "signed"
+   ],
+   "find": [
+    {
+     "text": "RAVI KUMAR SHARMA",
+     "label": "Person Name"
+    },
+    {
+     "text": "PRIYA RAMAN",
+     "label": "Person Name"
+    },
+    {
+     "text": "ravi kumar",
+     "label": "Person Name"
+    },
+    {
+     "text": "ankit sharma",
+     "label": "Person Name"
+    },
+    {
+     "text": "divya nair",
+     "label": "Person Name"
+    }
+   ],
+   "model": []
+  },
+  {
+   "id": "names-in-json-values",
+   "issues": "names: missed / wrong span (2026-10-22)",
+   "file": "users.json",
+   "text": "[{\"user\":\"Busireddy Kylash Reddy\",\"role\":\"admin\"},{\"assignee\":\"K Rahul Sai\",\"reviewer\":\"Juhi G\"}]\n",
+   "notPii": [
+    "admin",
+    "user",
+    "assignee",
+    "reviewer"
+   ],
+   "find": [
+    {
+     "text": "Busireddy Kylash Reddy",
+     "label": "Person Name"
+    },
+    {
+     "text": "K Rahul Sai",
+     "label": "Person Name"
+    },
+    {
+     "text": "Juhi G",
+     "label": "Person Name"
+    }
+   ],
+   "model": []
+  },
+  {
+   "id": "not-names-hinglish-places",
+   "issues": "names (false alarms)",
+   "file": "notes.txt",
+   "text": "par mujhe yeh kal tak chahiye, abhi tak nahi aaya\nNo. 2, 3rd Floor, Manandi Plaza, St. Marks Rd\nH-25 Galaxy City Near Malhotra College, Madhya Pradesh\nfrom os import path\nYesterday the Approved list was Pending Review\n",
+   "notPii": [
+    "abhi tak",
+    "kal tak",
+    "Manandi Plaza",
+    "Manandi",
+    "Malhotra College",
+    "Malhotra",
+    "Madhya Pradesh",
+    "Approved",
+    "Pending Review",
+    "Yesterday"
+   ],
+   "find": [],
+   "model": [],
+   "notLabel": "Person Name",
+   "about": "These may be part of an address (that is fine); they must never be a Person Name."
+  },
+  {
+   "id": "url-links",
+   "issues": "links (2026-10-23)",
+   "file": "links.txt",
+   "text": "Portfolio: priyasharma.dev\nVisit our site www.zentrixanalytics.in today\nShort link bit.ly/3xYzAbC shared\nInternal: http://intranet.acme.local/hr/payslips\nMeeting https://us02web.zoom.us/j/81234567890?pwd=abcDEF123\nURL: HTTPS://WWW.ACME-CORP.COM/ABOUT\nBackup: s3://acme-backups/customers/2024/export.csv\nWrapped https://www.example-company.com/a/very/long/path/that-goes-\non/next-line.html done\nDev server http://api.local:8080 and https://localhost:3000/login\nNote: done.in time. Use config.json and node.js\n",
+   "notPii": [
+    "done.in",
+    "config.json",
+    "node.js",
+    "http://api.local:8080",
+    "https://localhost:3000/login",
+    "abcDEF123"
+   ],
+   "find": [
+    {
+     "text": "priyasharma.dev",
+     "label": "URL/Link"
+    },
+    {
+     "text": "www.zentrixanalytics.in",
+     "label": "URL/Link"
+    },
+    {
+     "text": "bit.ly/3xYzAbC",
+     "label": "URL/Link"
+    },
+    {
+     "text": "http://intranet.acme.local/hr/payslips",
+     "label": "URL/Link"
+    },
+    {
+     "text": "https://us02web.zoom.us/j/81234567890?pwd=abcDEF123",
+     "label": "URL/Link"
+    },
+    {
+     "text": "HTTPS://WWW.ACME-CORP.COM/ABOUT",
+     "label": "URL/Link"
+    },
+    {
+     "text": "s3://acme-backups/customers/2024/export.csv",
+     "label": "URL/Link"
+    },
+    {
+     "text": "https://www.example-company.com/a/very/long/path/that-goes-\non/next-line.html",
+     "label": "URL/Link"
+    }
+   ],
+   "model": []
+  },
+  {
+   "id": "email-thread-names",
+   "issues": "names and links (2026-10-23)",
+   "file": "inbox~~gmail~~messages~~abc.eml",
+   "text": "From: \"Sneha Reddy\" <sneha.reddy@zentrix.in>\nTo: Arjun Malhotra <arjun.m@zentrix.in>\nCc: hr-team@zentrix.in\nSubject: Re: Offer letter for Nikhil Varma\n\nHi Arjun,\n\nPlease share the offer letter with Nikhil by EOD. Rekha from finance will process the joining bonus.\nAlso loop in Dr. Anand Krishnan for the medical.\n\nThanks & Regards,\nSneha Reddy\nHR Business Partner | Zentrix Analytics Pvt Ltd\nM: +91 98765 43210 | www.zentrix.in\nLinkedIn: https://www.linkedin.com/in/sneha-reddy-hr\n\nOn Mon, 3 Apr 2023 at 10:15, Nikhil Varma <nikhil.varma92@gmail.com> wrote:\n> Hi Sneha, I have attached my documents. - Nikhil\n",
+   "notPii": [
+    "Offer letter",
+    "HR Business Partner"
+   ],
+   "find": [
+    {
+     "text": "Sneha Reddy",
+     "label": "Person Name"
+    },
+    {
+     "text": "Arjun Malhotra",
+     "label": "Person Name"
+    },
+    {
+     "text": "Nikhil Varma",
+     "label": "Person Name"
+    },
+    {
+     "text": "Rekha",
+     "label": "Person Name"
+    },
+    {
+     "text": "Anand Krishnan",
+     "label": "Person Name"
+    },
+    {
+     "text": "https://www.linkedin.com/in/sneha-reddy-hr",
+     "label": "URL/Link"
+    },
+    {
+     "text": "www.zentrix.in",
+     "label": "URL/Link"
+    }
+   ],
+   "model": [],
+   "notLabel": "Person Name"
+  },
+  {
+   "id": "invoice-shop-name",
+   "issues": "names and links (2026-10-23)",
+   "file": "invoices~~pdf~~inv_0042.pdf",
+   "text": "TAX INVOICE\nBill To:\nMr. Suresh Kumar Gupta\nGupta Electricals\n14, Nehru Street, T. Nagar, Chennai - 600017\nAuthorised Signatory: Meenakshi Sundaram\nPrepared by: Ravi Teja K\n",
+   "notPii": [
+    "Gupta Electricals"
+   ],
+   "find": [
+    {
+     "text": "Suresh Kumar Gupta",
+     "label": "Person Name"
+    },
+    {
+     "text": "Gupta Electricals",
+     "label": "Business Name"
+    },
+    {
+     "text": "Meenakshi Sundaram",
+     "label": "Person Name"
+    },
+    {
+     "text": "Ravi Teja K",
+     "label": "Person Name"
+    }
+   ],
+   "model": [],
+   "notLabel": "Person Name"
+  },
+  {
+   "id": "git-log-date-not-name",
+   "issues": "names and links (2026-10-23)",
+   "file": "repo~~git~~log.txt",
+   "text": "commit 9fceb02d0ae598e95dc970b74767f19372d61af8\nAuthor: Harshavardhan Annamaneni <harsha.a@users.noreply.github.com>\nDate:   Tue Mar 14 10:12:33 2023 +0530\n\n    Merge pull request #42 from sowmya-k/fix-login\n\n    Co-authored-by: Sowmya Kodali <sowmya.k@acme.io>\n",
+   "notPii": [
+    "Tue Mar",
+    "Tue",
+    "Mar"
+   ],
+   "find": [
+    {
+     "text": "Harshavardhan Annamaneni",
+     "label": "Person Name"
+    },
+    {
+     "text": "Sowmya Kodali",
+     "label": "Person Name"
+    }
+   ],
+   "model": []
+  },
+  {
+   "id": "support-ticket-roles",
+   "issues": "names and links (2026-10-23)",
+   "file": "tickets~~zendesk~~1234.txt",
+   "text": "Ticket #1234 raised by customer Mohammed Irfan Khan.\nAgent Divya responded: Hello Mr. Khan, your refund of Rs. 2,499 is processed.\nEscalated to team lead Pradeep N.\nCustomer feedback: 'Thank you Divya ji, very helpful.'\n",
+   "notPii": [
+    "Agent"
+   ],
+   "find": [
+    {
+     "text": "Mohammed Irfan Khan",
+     "label": "Person Name"
+    },
+    {
+     "text": "Divya",
+     "label": "Person Name"
+    }
+   ],
+   "model": [],
+   "notLabel": "Person Name"
+  },
+  {
+   "id": "whatsapp-speakers",
+   "issues": "names and links (2026-10-23)",
+   "file": "chats~~whatsapp~~family.txt",
+   "text": "[12/03/23, 9:15 PM] Amma: Did you eat?\n[12/03/23, 9:16 PM] Kiran Kumar: yes amma\n[12/03/23, 9:17 PM] Lalitha Aunty: Kiran call your uncle Srinivas Rao tomorrow\n",
+   "notPii": [
+    "Aunty",
+    "Amma"
+   ],
+   "find": [
+    {
+     "text": "Kiran Kumar",
+     "label": "Person Name"
+    },
+    {
+     "text": "Lalitha",
+     "label": "Person Name"
+    },
+    {
+     "text": "Srinivas Rao",
+     "label": "Person Name"
+    }
+   ],
+   "model": [],
+   "notLabel": "Person Name"
+  },
+  {
+   "id": "kyc-form-titles",
+   "issues": "names and links (2026-10-23)",
+   "file": "forms~~kyc.txt",
+   "text": "Applicant Name : NAGARAJU POTHURAJU\nFather Name : VENKATESWARLU\nNominee : Smt. Padmavathi\nSpouse: Mrs. K. Sujatha\n",
+   "notPii": [
+    "Smt"
+   ],
+   "find": [
+    {
+     "text": "NAGARAJU POTHURAJU",
+     "label": "Person Name"
+    },
+    {
+     "text": "VENKATESWARLU",
+     "label": "Person Name"
+    },
+    {
+     "text": "Padmavathi",
+     "label": "Person Name"
+    },
+    {
+     "text": "K. Sujatha",
+     "label": "Person Name"
+    }
+   ],
+   "model": [],
+   "notLabel": "Person Name"
+  },
+  {
+   "id": "links-tools",
+   "issues": "names and links (2026-10-23)",
+   "file": "notes.md",
+   "text": "Docs: https://confluence.acme.com/display/HR/Onboarding+Guide\nRecording: https://drive.google.com/drive/folders/1AbC_dEf-GhI?usp=sharing\nTrello board trello.com/b/AbC123/sprint-12\nNotion page https://www.notion.so/acme/Q3-Roadmap-8a7b6c5d4e3f\nForm: https://docs.google.com/forms/d/e/1FAIpQLSf/viewform\nCalendly calendly.com/ravi-k/30min\nRepo git@github.com:acme-corp/payments-service.git\nSlides https://acme-my.sharepoint.com/:p:/g/personal/ravi_acme_com/EaBcD?e=xyz\nhttps://wa.me/919876543210\nhttp://tinyurl.com/acme-offer-2023\nhttps://www.youtube.com/watch?v=dQw4w9WgXcQ&t=42s\n",
+   "notPii": [
+    "git@github.com"
+   ],
+   "find": [
+    {
+     "text": "git@github.com:acme-corp/payments-service.git",
+     "label": "URL/Link"
+    },
+    {
+     "text": "calendly.com/ravi-k/30min",
+     "label": "URL/Link"
+    },
+    {
+     "text": "trello.com/b/AbC123/sprint-12",
+     "label": "URL/Link"
+    },
+    {
+     "text": "https://wa.me/919876543210",
+     "label": "URL/Link"
+    }
+   ],
+   "model": [],
+   "notLabel": "Email Address"
+  },
+  {
+   "id": "links-json-html-files",
+   "issues": "links (2026-10-23)",
+   "file": "links2.txt",
+   "text": "{\"profile\":\"https:\\/\\/www.linkedin.com\\/in\\/ravi-k-92\",\"site\":\"https:\\/\\/acme-corp.com\\/team\"}\n<a href=\"https://portal.acme-corp.com/employees/4521\">Profile</a>\nRead [the report](https://acme-corp.com/reports/q3.pdf).\n(see https://acme-corp.com/careers), and https://acme-corp.com/jobs; also https://acme-corp.com/about!\nDashboard is at app.acme-corp.com for admins\nLogin: https://hr.acme-corp.com:8443/login?user=ravi\nfile:///C:/Users/ravi.kumar/Documents/resume.pdf\nPhishing: hxxps://acme-corp[.]com/reset\ncustomer_id,website\n101,acme-corp.com/store\n102,shop.ravitraders.in\nLink: acme.co.in\nOur page: https://www.facebook.com/AcmeCorpIndia/\nWhatsApp group https://chat.whatsapp.com/Ab12Cd34Ef56\nImage: https://cdn.acme-corp.com/uploads/2023/05/ravi_kumar_photo.jpg\nMeet: meet.google.com/abc-defg-hij\nRef: https://example.com/test and http://test.local\nversion 1.2.3 and file main.py and v2.0\nEmail ravi@acme-corp.com about it\nVisit https://xn--80ak6aa92e.com/page\nhttps://acme-corp.com/path_(with)_parens\n",
+   "notPii": [
+    "main.py",
+    "1.2.3",
+    "user.id",
+    "http://test.local",
+    "https://example.com/test"
+   ],
+   "find": [
+    {
+     "text": "https:\\/\\/www.linkedin.com\\/in\\/ravi-k-92",
+     "label": "URL/Link"
+    },
+    {
+     "text": "https://portal.acme-corp.com/employees/4521",
+     "label": "URL/Link"
+    },
+    {
+     "text": "app.acme-corp.com",
+     "label": "URL/Link"
+    },
+    {
+     "text": "file:///C:/Users/ravi.kumar/Documents/resume.pdf",
+     "label": "URL/Link"
+    },
+    {
+     "text": "acme-corp.com/store",
+     "label": "URL/Link"
+    },
+    {
+     "text": "shop.ravitraders.in",
+     "label": "URL/Link"
+    },
+    {
+     "text": "acme.co.in",
+     "label": "URL/Link"
+    },
+    {
+     "text": "https://hr.acme-corp.com:8443/login?user=ravi",
+     "label": "URL/Link"
+    }
+   ],
+   "model": []
+  },
+  {
+   "id": "code-not-links",
+   "issues": "links (false alarms)",
+   "file": "app.py",
+   "text": "based on user.id and session.me\nif (user.profile.id) return;\nprint(app.acme-corp.com)\n",
+   "notPii": [
+    "user.id",
+    "session.me",
+    "user.profile.id",
+    "app.acme-corp.com"
+   ],
+   "find": [],
+   "model": []
+  }
+ ]
+}

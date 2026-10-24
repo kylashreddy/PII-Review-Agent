@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply tracking-wide;
+}
+
+.container {
+  @apply max-w-[1300px] w-full px-5 md:px-10;
+}
+
+@media (min-width: 768px) {
+  .card { @apply rounded-xl; }
+}
+
+@layer components {
+  .btn { @apply px-4 py-2; }
+}
+
+@import url("theme.css");
+@font-face { font-family: Inter; }
+@keyframes spin { to { transform: rotate(360deg); } }

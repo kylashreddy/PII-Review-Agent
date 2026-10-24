@@ -1,0 +1,6 @@
+{
+  "enabled": { "Value": true },
+  "defaultStage": { "Value": "L2" },
+  "supportContact": { "Value": "#pii-review-help" },
+  "extraKnownNames": { "Value": ["Peak Talent"] }
+}

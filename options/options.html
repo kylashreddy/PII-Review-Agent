@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PII Review Assistant · options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>PII Review Assistant <span class="badge" id="ver"></span></h1>
+
+    <section>
+      <h2>Highlights</h2>
+      <label class="switch">
+        <input type="checkbox" id="tags">
+        <span>Show label names on highlighted text</span>
+      </label>
+      <p class="note">A small tag such as <b>Person Name</b> or <b>Address · model</b> above each value found in the original document.</p>
+      <label class="switch">
+        <input type="checkbox" id="selcheck">
+        <span>Check selected text</span>
+      </label>
+      <p class="note">Select any text in a document to see whether it is PII, and why.</p>
+      <p class="note" id="kb">Knowledge base: checking…</p>
+    </section>
+
+    <section id="labelmode-section">
+      <h2>Labels</h2>
+      <label class="row" for="labelmode">
+        <span>Label list</span>
+        <select id="labelmode">
+          <option value="broad">13 labels (Person Name, Credentials…)</option>
+          <option value="auto">Automatic (from the task's label list)</option>
+          <option value="types">One label per PII type (Indian Aadhaar Number, Stripe Key…)</option>
+        </select>
+      </label>
+      <p class="note" id="labelmode-note">13 labels is the default. Automatic uses one label per PII type on tasks whose label list names the types. Reload the task page after changing.</p>
+    </section>
+
+    <section>
+      <h2>Agent <span class="badge">preview</span></h2>
+      <label class="switch">
+        <input type="checkbox" id="agent">
+        <span>Agent mode: pre-label the right document and ask me Yes / No</span>
+      </label>
+      <p class="note">Adds an <b>Agent ✦</b> tab to the panel. The agent's labels are drawn on the right document as
+        pending (dashed); you answer one card per label. Nothing is applied to the site and nothing is submitted.</p>
+    </section>
+
+    <section>
+      <h2>On-device model <span class="badge">beta</span></h2>
+      <p>Adds model suggestions for <b>person names, company names, addresses and usernames</b> to the rules.
+        It runs inside this browser: document text never leaves your computer.</p>
+      <label class="switch">
+        <input type="checkbox" id="enabled">
+        <span>Use model suggestions</span>
+      </label>
+      <p class="note" id="policy" hidden></p>
+
+      <div class="status">
+        <div><span class="key">Status</span> <span id="status">checking…</span></div>
+        <div id="detail" class="note"></div>
+      </div>
+
+      <button id="test" type="button">Test the model</button>
+      <pre id="result" hidden></pre>
+    </section>
+  </main>
+  <script src="../core/edition.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

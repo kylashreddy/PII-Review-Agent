@@ -1,0 +1,38 @@
+{
+  "bug1-us-bank-csv": {
+    "fileName": "by-pii-type~~us_bank_number~~records_0006.csv"
+  },
+  "bug1-us-bank-txt": {
+    "fileName": "by-pii-type~~us_bank_number~~notes_0002.txt"
+  },
+  "bug2-crypto-csv": {
+    "fileName": "by-pii-type~~crypto_wallet~~wallets_0004.csv"
+  },
+  "bug2-itin-csv": {
+    "fileName": "by-pii-type~~us_itin~~tax_ids_0003.csv"
+  },
+  "bug3-address-pdf": {
+    "fileName": "by-pii-type~~address~~shipping_label_0001.pdf"
+  },
+  "bug4-kk-json": {
+    "fileName": "by-pii-type~~kartu_keluarga~~families_0007.json"
+  },
+  "bug5-sendgrid-txt": {
+    "fileName": "by-pii-type~~sendgrid_key~~config_0001.env"
+  },
+  "bug6-git-logs": {
+    "fileName": "by-pii-type~~aws_secret_key~~repo~~.git~~logs~~HEAD"
+  },
+  "bug7-vehicle-txt": {
+    "fileName": "by-pii-type~~in_vehicle_registration~~tickets_0003.txt"
+  },
+  "bug8-passport-csv": {
+    "fileName": "by-pii-type~~passport_number~~travellers_0005.csv"
+  },
+  "bug8-kk-csv": {
+    "fileName": "by-pii-type~~kartu_keluarga~~families_0002.csv"
+  },
+  "bug6-git-logs-rewritten": {
+    "fileName": "by-pii-type~~aws_secret_key~~billing-svc~~.git~~logs~~HEAD"
+  }
+}

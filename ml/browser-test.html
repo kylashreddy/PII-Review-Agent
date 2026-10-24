@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Model browser test</title>
+  <style>
+    :root { --bg: #fff; --fg: #111; --muted: #666; color-scheme: light dark; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #161616; --fg: #eee; --muted: #aaa; } }
+    body { background: var(--bg); color: var(--fg); font: 14px/1.5 system-ui, sans-serif; margin: 24px; }
+    pre { white-space: pre-wrap; word-break: break-word; }
+    .muted { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <h1>On-device model — browser test</h1>
+  <p class="muted">Loads the extension's real offscreen scripts (vendor/ort, offscreen/*) with a stand-in for the
+    chrome API, then runs the model on samples. Serve the repository root: <code>python3 -m http.server 8765</code>,
+    open <code>/ml/browser-test.html</code>.</p>
+  <pre id="out">starting…</pre>
+  <script>
+    // Stand-in for the parts of the chrome API the model page uses.
+    const listeners = [];
+    window.chrome = {
+      runtime: {
+        id: 'test',
+        getURL: (p) => new URL('../' + p, location.href).href,
+        onMessage: { addListener: (fn) => listeners.push(fn) },
+      },
+    };
+    window.close = () => console.log('model page would close (idle)');
+    window.ask = (msg) => new Promise((resolve) => {
+      let answered = false;
+      for (const fn of listeners) {
+        const async = fn({ target: 'pii-model', ...msg }, { id: 'test' }, (r) => { answered = true; resolve(r); });
+        if (!async && !answered) continue;
+      }
+    });
+  </script>
+  <script src="../vendor/ort/ort.wasm.min.js"></script>
+  <script src="../offscreen/gliner-core.js"></script>
+  <script src="../offscreen/prompts.js"></script>
+  <script src="../offscreen/model-host.js"></script>
+  <script>
+    const out = document.getElementById('out');
+    const log = (s) => { out.textContent += '\n' + s; };
+    const SAMPLES = [
+      'Ship To:\nKavita Sharma\n214/09 C-3 Block, Govind Nagar, Near Nehru School\nKanpur, Uttar Pradesh\nPhone: 9839054321',
+      'notes: spoke with ravi kumar from zentrix analytics; the Field Services team will follow up on friday.',
+      'Nama: Budi Santoso\nAlamat: Jl. Merdeka No. 10, Gambir\nPerusahaan: PT Sinar Jaya Abadi',
+    ];
+    (async () => {
+      out.textContent = `userAgent: ${navigator.userAgent}\ncrossOriginIsolated: ${self.crossOriginIsolated}`;
+      log('status before: ' + JSON.stringify(await ask({ type: 'status' })));
+      let t = performance.now();
+      const pre = await ask({ type: 'preload' });
+      log(`preload: ${JSON.stringify(pre)} (${Math.round(performance.now() - t)} ms)`);
+      for (const [k, text] of SAMPLES.entries()) {
+        t = performance.now();
+        const r = await ask({ type: 'detect', key: 's' + k, text });
+        log(`\n— sample ${k + 1} (${Math.round(performance.now() - t)} ms, model ${r.ms} ms, ok=${r.ok}${r.ok ? '' : ' ' + r.code + ': ' + r.error})`);
+        for (const e of (r.entities || [])) log(`  ${e.label.padEnd(16)} ${String(Math.round(e.score * 100)).padStart(3)}%  “${e.text.replace(/\n/g, ' ')}”`);
+      }
+      // Speed on a larger document: 40 records of a shipping manifest (~2,000 words).
+      const big = Array.from({ length: 40 }, (_, i) => `Record ${i + 1}: delivered to Meera Joshi of Bluepeak Logistics at 45, 2nd Main, Koramangala, Bengaluru on time; signed by the guard.`).join('\n');
+      t = performance.now();
+      const rb = await ask({ type: 'detect', key: 'big', text: big });
+      log(`\nlarge doc: ${big.split(/\s+/).length} words, ${rb.windows} windows, ${Math.round(performance.now() - t)} ms, ${rb.entities.length} entities, partial=${rb.partial}`);
+      t = performance.now();
+      await ask({ type: 'detect', key: 'big', text: big });
+      log(`same doc again (cache): ${Math.round(performance.now() - t)} ms`);
+      const huge = await ask({ type: 'detect', text: 'x '.repeat(1100000) });
+      log(`too-large guard: ${JSON.stringify({ ok: huge.ok, code: huge.code })}`);
+      log('\nDONE');
+    })().catch((e) => log('ERROR ' + (e.stack || e)));
+  </script>
+</body>
+</html>

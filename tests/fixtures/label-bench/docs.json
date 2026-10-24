@@ -1,0 +1,45 @@
+{
+ "about": "Per-label benchmark for the 13 site labels (Date is out of scope, Overscrubbed is a review label). Text uses {{Label|value}} for every expected value; everything else must not be reported. \"<SPLIT>\" is removed before use (keeps secret-shaped test values out of the repo as whole strings).",
+ "docs": [
+  {
+   "file": "kyc-form.txt",
+   "marked": "CUSTOMER KYC FORM\nName: {{Person Name|Ramesh Chandra Yadav}}\nFather's Name: {{Person Name|Shiv Prasad Yadav}}\nDate of Birth: 12/07/1985\nMobile: {{Contact Number|+91 98450 12345}}   Alt: {{Contact Number|080 4123 5678}}\nEmail: {{Email Address|ramesh.yadav85@gmail.com}}\nAddress: {{Address|H.No. 4-7-120, Street No. 3, Habsiguda, Hyderabad - 500007, Telangana}}\nPAN: {{Credentials|AJKPY4521L}}   Aadhaar: {{Credentials|5487 2365 9012}}\nBank: State Bank of India, A/c No. {{Account Number|30214578962}}, IFSC {{Account Number|SBIN0004521}}\nUPI: {{Account Number|ramesh85@ybl}}\nVehicle: {{Vehicle Number Plate|TS 08 EK 4521}}\nEmployer: {{Business Name|Sri Lakshmi Agro Industries Pvt Ltd}}\nStatus: Verified   Branch: Habsiguda   Application No: 2023/KYC/0045\n"
+  },
+  {
+   "file": "server-log.txt",
+   "marked": "2023-11-02 10:15:22 INFO  login ok user={{Person Username|ravi_k92}} ip={{IP Address|49.207.183.12}}\n2023-11-02 10:15:25 WARN  failed login user={{Person Username|admin}} from {{IP Address|10.0.4.27}}\n2023-11-02 10:16:01 INFO  GET /api/v1/orders/77231 200 12ms client={{IP Address|2401:4900:1c2a:8f3e::1b}}\n2023-11-02 10:16:30 DEBUG device mac={{IP Address|3c:22:fb:9a:11:0e}} build=4.2.1 version 10.0.19045\n2023-11-02 10:17:02 ERROR db connect failed {{Credentials|postgres://app_user:Xk9#mPq2@db.internal.acme.com:5432/orders}}\n2023-11-02 10:17:40 INFO  webhook from {{URL/Link|https://hooks.acme-corp.com/razorpay/77231}}\n"
+  },
+  {
+   "file": "config.env",
+   "marked": "APP_NAME=orders-service\nAPP_ENV=production\nPORT=8080\nDB_HOST={{IP Address|10.0.4.27}}\nDB_PASSWORD={{Credentials|Sup3r$ecretPass!}}\nSTRIPE_SECRET_KEY={{Credentials|sk_<SPLIT>live_51NcQ2aSDf8hJk3LmNoPqRsTuVwXyZ0123456789}}\nAWS_ACCESS_KEY_ID={{Credentials|AKIA<SPLIT>4XWQ7RZ5MNBV2PLD}}\nSENTRY_DSN=https://examplePublicKey@o0.ingest.sentry.io/0\nSUPPORT_EMAIL={{Email Address|support@acme-corp.com}}\nTIMEOUT_MS=3000\n"
+  },
+  {
+   "file": "email.eml",
+   "marked": "From: {{Person Name|Kavya Menon}} <{{Email Address|kavya.menon@brightpath.co.in}}>\nTo: {{Email Address|accounts@sunrisetextiles.com}}\nSubject: Payment for invoice INV-2023-0912\n\nDear Mr. {{Person Name|Joshi}},\n\nPlease find the payment details for invoice INV-2023-0912 dated 14 Sep 2023.\nAmount: Rs. 1,45,000. Transferred to {{Business Name|Sunrise Textiles}} account {{Account Number|50200045678912}} (HDFC Bank, IFSC {{Account Number|HDFC0001234}}).\nCard used: {{Account Number|4111 1111 1111 1111}}\n\nFor queries call me on {{Contact Number|9876501234}} or visit {{URL/Link|https://brightpath.co.in/contact}}.\n\nRegards,\n{{Person Name|Kavya Menon}}\nAccounts Manager, {{Business Name|BrightPath Consulting LLP}}\n"
+  },
+  {
+   "file": "chat.txt",
+   "marked": "[09:01] {{Person Name|Arvind}}: guys the demo is at 3\n[09:02] {{Person Name|Shruti Iyer}}: ok. my github is {{Person Username|shrutiiyer-dev}} if you need access\n[09:03] {{Person Name|Arvind}}: added you. ping {{Person Username|@nitin_ops}} for VPN\n[09:04] {{Person Name|Shruti Iyer}}: thanks! my number is {{Contact Number|+91 70221 98345}}, call if stuck\n[09:05] bot: Reminder - standup in 10 min\n"
+  },
+  {
+   "file": "invoice.txt",
+   "marked": "TAX INVOICE                                   Invoice No: GS/2023/1187\nSeller: {{Business Name|Ganesh Steel Traders}}\nGSTIN: {{Credentials|27AAPFG1234K1Z5}}\nAddress: {{Address|Plot 21, MIDC Industrial Area, Bhosari, Pune}} 411026\nBuyer: {{Business Name|Om Sai Constructions}}\nShip To: {{Person Name|Prakash Deshmukh}}, {{Address|Flat 12B, Shanti Heights, Baner Road, Pune}} 411045\nContact: {{Contact Number|020-2712 4455}}\nDescription            Qty   Rate     Amount\nTMT Bars 12mm          50    650.00   32,500.00\nTotal                                  32,500.00\nTerms: Payment within 30 days.\n"
+  },
+  {
+   "file": "vehicle.csv",
+   "marked": "id,owner_name,vehicle_no,model,city,status\n1,{{Person Name|Anil Kapoor}},{{Vehicle Number Plate|MH12AB1234}},Swift,Pune,active\n2,{{Person Name|Sunita Rao}},{{Vehicle Number Plate|KA 05 MN 4321}},Creta,Bengaluru,expired\n3,{{Person Name|Imran Sheikh}},{{Vehicle Number Plate|DL3CAF0021}},Activa,Delhi,active\n"
+  },
+  {
+   "file": "profile.json",
+   "marked": "{\n  \"id\": 4521,\n  \"full_name\": \"{{Person Name|Meghana Kulkarni}}\",\n  \"username\": \"{{Person Username|meghana.k}}\",\n  \"email\": \"{{Email Address|meghana.kulkarni@outlook.com}}\",\n  \"phone\": \"{{Contact Number|+1 (415) 555-0132}}\",\n  \"company\": \"{{Business Name|Nimbus Cloud Technologies}}\",\n  \"website\": \"{{URL/Link|https://meghana.dev/portfolio}}\",\n  \"role\": \"Data Engineer\",\n  \"department\": \"Engineering\",\n  \"status\": \"active\",\n  \"created_at\": \"2023-04-11T09:30:00Z\",\n  \"last_ip\": \"{{IP Address|103.21.244.15}}\"\n}\n"
+  },
+  {
+   "file": "resume.txt",
+   "marked": "{{Person Name|ROHIT SHARMA}}\n{{Email Address|rohit.sharma.dev@gmail.com}} | {{Contact Number|+91-9988776655}} | {{URL/Link|linkedin.com/in/rohit-sharma-dev}} | {{URL/Link|github.com/rohitsdev}}\nEXPERIENCE\nSoftware Engineer, {{Business Name|Infinity Softech Solutions}}, Bengaluru (2021 - Present)\n- Built payment flows with Razorpay and Stripe\n- Mentored 3 interns\nEDUCATION\nB.E. Computer Science, PES University, 2021\nSKILLS: Python, Java, AWS, Docker, Kubernetes\n"
+  },
+  {
+   "file": "code.py",
+   "marked": "import os\nfrom app.models import User\n\nAPI_URL = \"{{URL/Link|https://api.acme-corp.com/v2}}\"\nSECRET_KEY = os.getenv(\"SECRET_KEY\")\nGITHUB_TOKEN = \"{{Credentials|ghp_<SPLIT>A1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q7r8}}\"\n\ndef get_user(user_id):\n    # Contact: {{Person Name|Deepika Nair}} <{{Email Address|deepika.nair@acme-corp.com}}>\n    user = User.query.get(user_id)\n    if user.name == \"admin\":\n        return None\n    return {\"name\": user.name, \"email\": user.email, \"ip\": \"127.0.0.1\"}\n"
+  }
+ ]
+}

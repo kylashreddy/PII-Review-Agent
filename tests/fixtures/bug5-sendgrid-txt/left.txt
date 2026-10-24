@@ -1,0 +1,4 @@
+# mail service config
+MAIL_PROVIDER=sendgrid
+SENDGRID_API_KEY=S{{}}G.pdR5AS552xp4j7B4TNIXuh.Z4R43SYM9fwPo2W4ueete7Z6Fk6mjmkrHXs2NgV6dGS
+MAIL_FROM=noreply@acme-notify.io

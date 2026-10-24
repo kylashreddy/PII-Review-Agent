@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "defaultStage": "L2",
+  "supportContact": "#pii-review-help",
+  "extraKnownNames": ["Peak Talent"],
+  "pageSetup": {
+    "leftDocument": "REPLACE: CSS selector of the original document",
+    "rightDocument": "REPLACE: CSS selector of the redacted document",
+    "label": {
+      "rightLabelSpan": "REPLACE: CSS selector of one label span",
+      "labelNameAttributes": ["data-label"]
+    }
+  }
+}

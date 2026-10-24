@@ -1,0 +1,59 @@
+[project]
+name = "pii-agent"
+version = "0.1.0"
+description = "PII annotation agent: the PII Review Assistant's rules + GLiNER annotate a task, check themselves, and hand one human Yes / No cards."
+requires-python = ">=3.11"
+dependencies = [
+  "pydantic>=2.7",
+  "pydantic-settings>=2.3",
+  # Pinned: the int8 model's scores change a lot between runtimes (1.19.2: 0.23, 1.31: 0.99 on the same name).
+  # 1.19.2 is what ml/eval.js tuned core/hybrid.js's thresholds on; change only through the eval gate.
+  "onnxruntime==1.19.2",
+  "numpy>=1.26,<2",
+  "regex>=2024.5",
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.6", "mypy>=1.11", "pytest>=8", "anthropic>=1.0"]
+# Claude adjudicator: only with PII_AGENT_ANTHROPIC_ENABLED=true and a recorded approval.
+anthropic = ["anthropic>=1.0"]
+
+[project.scripts]
+pii-agent = "pii_agent.cli:main"
+pii-agent-eval = "eval.run_eval:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["pii_agent*", "eval*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = [".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "N", "S", "RUF", "SIM", "PL"]
+ignore = ["PLR2004", "PLR0913", "PLR0912", "PLR0915", "PLR0911", "S603", "RUF001", "RUF002", "RUF003", "PLC0415", "PLR0917"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "PLR2004", "S607", "S311"]
+"eval/**" = ["S311"]
+"eval/blind.py" = ["E501"]  # document templates read best on one line
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+packages = ["pii_agent", "eval", "tests"]
+
+[[tool.mypy.overrides]]
+module = ["onnxruntime", "onnxruntime.*", "regex"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = ["model: needs the GLiNER model files (models/multi_pii)", "slow: runs the full gold sets"]

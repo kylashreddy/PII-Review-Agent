@@ -1,0 +1,20 @@
+[
+  {
+    "record_id": "R000001",
+    "department": "Field Services",
+    "status": "active",
+    "nomor_kk": "5102847361902845"
+  },
+  {
+    "record_id": "R000002",
+    "department": "People Ops",
+    "status": "inactive",
+    "nomor_kk": "3174091203880007"
+  },
+  {
+    "record_id": "R000003",
+    "department": "Procurement",
+    "status": "active",
+    "nomor_kk": "6403118205770001"
+  }
+]

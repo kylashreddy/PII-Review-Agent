@@ -1,0 +1,60 @@
+0000000000000000000000000000000000000000 e000fc2fc51a2eb05e9989bbb8675539d6eae68f Hrithvik Basak <pamela88@example.com> 1772450090 +0530	commit (initial): Add billing service skeleton
+e000fc2fc51a2eb05e9989bbb8675539d6eae68f e40de3738a3dc34080139a76e9d2b4e45205a66f Rohan Mehta <rohan.m@example.net> 1772450188 +0530	commit: Fix retry logic for invoice webhook
+e40de3738a3dc34080139a76e9d2b4e45205a66f 01d592d9ce2bcdbf23af53e547f9cf8d92da799b Kavya Rao <kavya.r@example.org> 1772450287 +0530	commit: Update README with deployment steps
+01d592d9ce2bcdbf23af53e547f9cf8d92da799b f255264565c0aa068eb17f0acac65593412c4d0c Hrithvik Basak <pamela88@example.com> 1772450387 +0530	merge feature/payments: Fast-forward
+f255264565c0aa068eb17f0acac65593412c4d0c c38edbd4804848e1b6e9810f59f8f00508c9dfc5 Rohan Mehta <rohan.m@example.net> 1772450488 +0530	commit (amend): Rename env vars
+c38edbd4804848e1b6e9810f59f8f00508c9dfc5 ea23b211c4ff3b9646c34571c6871f50ca2d9137 Kavya Rao <kavya.r@example.org> 1772450590 +0530	checkout: moving from main to release/1.4
+ea23b211c4ff3b9646c34571c6871f50ca2d9137 685f9e622b541f4c59d44c6f139071675271c29a Hrithvik Basak <pamela88@example.com> 1772450693 +0530	commit: Bump axios to 1.7.4
+685f9e622b541f4c59d44c6f139071675271c29a 057fe509ad52ea4a0537a195d4eafca7348e95a1 Rohan Mehta <rohan.m@example.net> 1772450797 +0530	rebase (finish): returning to refs/heads/main
+057fe509ad52ea4a0537a195d4eafca7348e95a1 0245702ef46488d8fd59bb81e3a18f71a4c8ae88 Kavya Rao <kavya.r@example.org> 1772450902 +0530	commit (initial): Add billing service skeleton
+0245702ef46488d8fd59bb81e3a18f71a4c8ae88 abf833671be42872fca1acee5c6f108787587231 Hrithvik Basak <pamela88@example.com> 1772451008 +0530	commit: Fix retry logic for invoice webhook
+abf833671be42872fca1acee5c6f108787587231 66835ebae9c79b4618bb86ddd4bbfaeac58d6ff6 Rohan Mehta <rohan.m@example.net> 1772451115 +0530	commit: Update README with deployment steps
+66835ebae9c79b4618bb86ddd4bbfaeac58d6ff6 0e2db2addc551bf87fe51a9c37d5254064400e2a Kavya Rao <kavya.r@example.org> 1772451223 +0530	merge feature/payments: Fast-forward
+0e2db2addc551bf87fe51a9c37d5254064400e2a 0f3a0c05ef22665aee9c4f900cb617a1944f2a7b Hrithvik Basak <pamela88@example.com> 1772451332 +0530	commit (amend): Rename env vars
+0f3a0c05ef22665aee9c4f900cb617a1944f2a7b 88953a6fda42a2cfabc7ef7a2d5bb349d6344994 Rohan Mehta <rohan.m@example.net> 1772451442 +0530	checkout: moving from main to release/1.4
+88953a6fda42a2cfabc7ef7a2d5bb349d6344994 7463e4a68adf0dda29d734cbcb78ba20509b7a8e Kavya Rao <kavya.r@example.org> 1772451553 +0530	commit: Bump axios to 1.7.4
+7463e4a68adf0dda29d734cbcb78ba20509b7a8e 689d293839a5313e8bef03b260f3c50564b647d3 Hrithvik Basak <pamela88@example.com> 1772451665 +0530	rebase (finish): returning to refs/heads/main
+689d293839a5313e8bef03b260f3c50564b647d3 2d41b55f952257078555371dd133eb36a6ceb1bc Rohan Mehta <rohan.m@example.net> 1772451778 +0530	commit (initial): Add billing service skeleton
+2d41b55f952257078555371dd133eb36a6ceb1bc bfb0d20b70431518c5c1e31a3295648e93c829d4 Kavya Rao <kavya.r@example.org> 1772451892 +0530	commit: Fix retry logic for invoice webhook
+bfb0d20b70431518c5c1e31a3295648e93c829d4 b520ef7fc8363f2429401af24d7601e572406677 Hrithvik Basak <pamela88@example.com> 1772452007 +0530	commit: Update README with deployment steps
+b520ef7fc8363f2429401af24d7601e572406677 9a1c9d33c7e7153b6d022855ca63e1f7268e6a44 Rohan Mehta <rohan.m@example.net> 1772452123 +0530	merge feature/payments: Fast-forward
+9a1c9d33c7e7153b6d022855ca63e1f7268e6a44 f99dab94a5f222c4146a80fea645c9ccef132914 Kavya Rao <kavya.r@example.org> 1772452240 +0530	commit (amend): Rename env vars
+f99dab94a5f222c4146a80fea645c9ccef132914 7064bb91e71cfd31591aba453f58954933815589 Hrithvik Basak <pamela88@example.com> 1772452358 +0530	checkout: moving from main to release/1.4
+7064bb91e71cfd31591aba453f58954933815589 adf514b4d766375a98cd6d8161731bd4bbd187cc Rohan Mehta <rohan.m@example.net> 1772452477 +0530	commit: Bump axios to 1.7.4
+adf514b4d766375a98cd6d8161731bd4bbd187cc d538980ba6e0d0b7c57734e8c4b6a780b6dcec3e Kavya Rao <kavya.r@example.org> 1772452597 +0530	rebase (finish): returning to refs/heads/main
+d538980ba6e0d0b7c57734e8c4b6a780b6dcec3e 1b1fbb0fee91df61932d2774085f29a99e29400f Hrithvik Basak <pamela88@example.com> 1772452718 +0530	commit (initial): Add billing service skeleton
+1b1fbb0fee91df61932d2774085f29a99e29400f fbb849a462c6a516cf28bc902ef04ec9417c2aad Rohan Mehta <rohan.m@example.net> 1772452840 +0530	commit: Fix retry logic for invoice webhook
+fbb849a462c6a516cf28bc902ef04ec9417c2aad a19e2e34ef35475fcdd1d2250a95c0be10c89f12 Kavya Rao <kavya.r@example.org> 1772452963 +0530	commit: Update README with deployment steps
+a19e2e34ef35475fcdd1d2250a95c0be10c89f12 928ed126311e409e6ae26a4614dd32c56938b7f4 Hrithvik Basak <pamela88@example.com> 1772453087 +0530	merge feature/payments: Fast-forward
+928ed126311e409e6ae26a4614dd32c56938b7f4 66abfc3ddd0b69ff18cc38aa84356962838cf1f8 Rohan Mehta <rohan.m@example.net> 1772453212 +0530	commit (amend): Rename env vars
+66abfc3ddd0b69ff18cc38aa84356962838cf1f8 4f88b1f31d4cc1c0c08e020499d845d54cdb740a Kavya Rao <kavya.r@example.org> 1772453338 +0530	checkout: moving from main to release/1.4
+4f88b1f31d4cc1c0c08e020499d845d54cdb740a 7c371415fa84087687884a03a361bcc818c1b5b7 Hrithvik Basak <pamela88@example.com> 1772453465 +0530	commit: Bump axios to 1.7.4
+7c371415fa84087687884a03a361bcc818c1b5b7 09dbf78ac5d6b1cb21b2846607b31695a82ec696 Rohan Mehta <rohan.m@example.net> 1772453593 +0530	rebase (finish): returning to refs/heads/main
+09dbf78ac5d6b1cb21b2846607b31695a82ec696 92f416d5ce96ca7cd60b916620dbd005f32df78d Kavya Rao <kavya.r@example.org> 1772453722 +0530	commit (initial): Add billing service skeleton
+92f416d5ce96ca7cd60b916620dbd005f32df78d 3b4a83a3fe08dbcc7d35e7bad21b37dab7be2084 Hrithvik Basak <pamela88@example.com> 1772453852 +0530	commit: Fix retry logic for invoice webhook
+3b4a83a3fe08dbcc7d35e7bad21b37dab7be2084 fa1e6feba34339782ace92dd08b5682282881d4d Rohan Mehta <rohan.m@example.net> 1772453983 +0530	commit: Update README with deployment steps
+fa1e6feba34339782ace92dd08b5682282881d4d 1ff8e5b566e2337a3c5a9dfaa5334269f1d8e7c1 Kavya Rao <kavya.r@example.org> 1772454115 +0530	merge feature/payments: Fast-forward
+1ff8e5b566e2337a3c5a9dfaa5334269f1d8e7c1 d68ddbfbc3bf8443b74f9993653818e64ed3740a Hrithvik Basak <pamela88@example.com> 1772454248 +0530	commit (amend): Rename env vars
+d68ddbfbc3bf8443b74f9993653818e64ed3740a f374f2b08dcaa6484a6ff87f0fce2eb5710bef87 Rohan Mehta <rohan.m@example.net> 1772454382 +0530	checkout: moving from main to release/1.4
+f374f2b08dcaa6484a6ff87f0fce2eb5710bef87 5d18a215cf4acc3aee46fa2578db9151f2ecbdb2 Kavya Rao <kavya.r@example.org> 1772454517 +0530	commit: Bump axios to 1.7.4
+5d18a215cf4acc3aee46fa2578db9151f2ecbdb2 fd481ccf7d8297b8be6a2bb178b4f1741680b1f8 Hrithvik Basak <pamela88@example.com> 1772454653 +0530	rebase (finish): returning to refs/heads/main
+fd481ccf7d8297b8be6a2bb178b4f1741680b1f8 d92db2b8d479de3c84a25d89446b903a6af8d078 Rohan Mehta <rohan.m@example.net> 1772454790 +0530	commit (initial): Add billing service skeleton
+d92db2b8d479de3c84a25d89446b903a6af8d078 e39dc54bfc2eeea726bbd2bf1d85dcbd7e26083d Kavya Rao <kavya.r@example.org> 1772454928 +0530	commit: Fix retry logic for invoice webhook
+e39dc54bfc2eeea726bbd2bf1d85dcbd7e26083d 03f68126c7f80eb26c4e67467fd4b223dc39b53b Hrithvik Basak <pamela88@example.com> 1772455067 +0530	commit: Update README with deployment steps
+03f68126c7f80eb26c4e67467fd4b223dc39b53b ff20ea588ed2e2c526c0bcf53910261f5aae3080 Rohan Mehta <rohan.m@example.net> 1772455207 +0530	merge feature/payments: Fast-forward
+ff20ea588ed2e2c526c0bcf53910261f5aae3080 717386211216efea9cf5e36b72c2bd46382d7437 Kavya Rao <kavya.r@example.org> 1772455348 +0530	commit (amend): Rename env vars
+717386211216efea9cf5e36b72c2bd46382d7437 557b97810dd4c8d1318f344c1fdbc170b7109acc Hrithvik Basak <pamela88@example.com> 1772455490 +0530	checkout: moving from main to release/1.4
+557b97810dd4c8d1318f344c1fdbc170b7109acc e5872c62a0dfc451b4c4629b3876d7f36ac59439 Rohan Mehta <rohan.m@example.net> 1772455633 +0530	commit: Bump axios to 1.7.4
+e5872c62a0dfc451b4c4629b3876d7f36ac59439 2887272ff867517cb30e4f453c35775d5610e5c3 Kavya Rao <kavya.r@example.org> 1772455777 +0530	rebase (finish): returning to refs/heads/main
+2887272ff867517cb30e4f453c35775d5610e5c3 bd91e014eabcf6e21f1760f46628bacab8b11f23 Hrithvik Basak <pamela88@example.com> 1772455922 +0530	commit (initial): Add billing service skeleton
+bd91e014eabcf6e21f1760f46628bacab8b11f23 21046b028839cef1a9a5c9a468276fa236b13e70 Rohan Mehta <rohan.m@example.net> 1772456068 +0530	commit: Fix retry logic for invoice webhook
+21046b028839cef1a9a5c9a468276fa236b13e70 3e27172ef520201be978391e82594399aab8a5da Kavya Rao <kavya.r@example.org> 1772456215 +0530	commit: Update README with deployment steps
+3e27172ef520201be978391e82594399aab8a5da 4193c79d48bac70be6f8a350f0372c88ce73f8d9 Hrithvik Basak <pamela88@example.com> 1772456363 +0530	merge feature/payments: Fast-forward
+4193c79d48bac70be6f8a350f0372c88ce73f8d9 07cba870969ff64e46a0ea1c5186a3035c1287b0 Rohan Mehta <rohan.m@example.net> 1772456512 +0530	commit (amend): Rename env vars
+07cba870969ff64e46a0ea1c5186a3035c1287b0 9667da8f356c1f6bc3163c7ae96c812485382ba0 Kavya Rao <kavya.r@example.org> 1772456662 +0530	checkout: moving from main to release/1.4
+9667da8f356c1f6bc3163c7ae96c812485382ba0 8ba01dfa49cf5ea7fa124f9e310748d0af29c35b Hrithvik Basak <pamela88@example.com> 1772456813 +0530	commit: Bump axios to 1.7.4
+8ba01dfa49cf5ea7fa124f9e310748d0af29c35b f8a4a08be56ad217338358bdeaf16ce5f558fc74 Rohan Mehta <rohan.m@example.net> 1772456965 +0530	rebase (finish): returning to refs/heads/main
+f8a4a08be56ad217338358bdeaf16ce5f558fc74 9060b11f640408fc91e854ba2e07be32694fd84a Kavya Rao <kavya.r@example.org> 1772457118 +0530	commit (initial): Add billing service skeleton
+9060b11f640408fc91e854ba2e07be32694fd84a 0f7284fb5b2ce9c34685d6a22e7f840ded4b9932 Hrithvik Basak <pamela88@example.com> 1772457272 +0530	commit: Fix retry logic for invoice webhook
+0f7284fb5b2ce9c34685d6a22e7f840ded4b9932 10952300ffa4cb7da84edcdf74d1e70df6cd6a57 Rohan Mehta <rohan.m@example.net> 1772457427 +0530	commit: Update README with deployment steps
+10952300ffa4cb7da84edcdf74d1e70df6cd6a57 38ac699265b51bd546488fd012c59c3fb44e0672 Kavya Rao <kavya.r@example.org> 1772457583 +0530	merge feature/payments: Fast-forward
